@@ -32,7 +32,7 @@ useEffect(() => {
 
   const retrieveCategories = async () => {
     try{
-      const {data} = await axios.get('http://0.0.0.0:1317/cosmos/bank/v1beta1/balances/cosmos1g7dna0gp4nec5rza4q25htj0cjgswrxe6adac9')
+      const {data} = await axios.get('http://localhost:5000/balances/osmo')
       setCategories(data.balances)
     }catch(error){
       console.log(error)
