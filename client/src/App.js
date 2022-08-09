@@ -34,6 +34,7 @@ useEffect(() => {
     try{
       const {data} = await axios.get('http://localhost:5000/balances/osmo')
       setCategories(data.balances)
+      console.log(data)
     }catch(error){
       console.log(error)
     }
@@ -54,9 +55,9 @@ useEffect(() => {
         <div className='row text-white text-center mt-5'>
           <div className='col-4'>
             <h4 className='border border-info'>Osmosis</h4>
-            <h5 className='mt-5'>{JSON.stringify(categories)}</h5>
-            <h5>Balance B</h5>
-            <h5>Balance C</h5>
+            <h5 className='mt-5'>{JSON.stringify(categories[7])}</h5>
+            <h5>{JSON.stringify(categories[7])}</h5>
+            <h5>{JSON.stringify(categories[7])}</h5>
           </div>
           <div className='col-4'>
             <h4 className='border border-info'>Iris</h4>
