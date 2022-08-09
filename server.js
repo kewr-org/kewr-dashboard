@@ -6,7 +6,7 @@ const app = express()
 app.use(cors())
 
 app.get("/", (req, res) => {
-    res.send("Hello, World!");
+    res.send("Tes123");
     });
 
 app.get("/balances/osmo", async (req, res) => {
@@ -21,7 +21,7 @@ app.get("/balances/osmo", async (req, res) => {
         }
     });
 
-app.listen(5000, ()=>{
+app.listen(5000, () => {
     console.log('server running at 5000')
     })
 
