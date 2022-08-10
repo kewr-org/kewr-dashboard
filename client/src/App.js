@@ -13,11 +13,14 @@ import axios from 'axios';
 
 function App() {
 const [categories, setCategories] = useState();
-const [address, setAddress] = useState('')
+const [address, setAddress] = useState('');
+const ibcLists = ["iris", "apple", "crescent"];
+
+const list = ibcLists.map (ibcList => <li key={ibcList}>{ibcList}</li>)
  
 //  keplr
  async function handleClick() {
-  const chainId = "irishub-1"
+  const chainId = "cosmoshub-1"
   await window.keplr.enable(chainId)
   const offlineSigner = window.getOfflineSigner(chainId);
   const accounts = await offlineSigner.getAccounts();
@@ -55,9 +58,9 @@ useEffect(() => {
         <div className='row text-white text-center mt-5'>
           <div className='col-4'>
             <h4 className='border border-info'>Osmosis</h4>
-            <h5 className='mt-5'>{JSON.stringify(categories[7])}</h5>
-            <h5>{JSON.stringify(categories[7])}</h5>
-            <h5>{JSON.stringify(categories[7])}</h5>
+            <h5 className='mt-5'>{JSON.stringify(categories)}</h5>
+            <h5>{list}</h5>
+            <h5>Balance</h5>
           </div>
           <div className='col-4'>
             <h4 className='border border-info'>Iris</h4>
