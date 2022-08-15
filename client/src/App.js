@@ -13,6 +13,8 @@ import axios from 'axios';
 
 function App() {
 const [categories, setCategories] = useState();
+const [categoriesIris, setCategoriesIris] = useState();
+const [categoriesCrescent, setCategoriesCrescent] = useState();
 const [address, setAddress] = useState('');
 const ibcListsOsmosis = [
   {
@@ -71,6 +73,34 @@ useEffect(() => {
     }
   }
 
+  useEffect(() => {
+    retrieveCategoriesIris();
+  },[]);
+  
+    const retrieveCategoriesIris = async () => {
+      try{
+        const { data } = await axios.get('http://localhost:5000/balances/iris/')
+        setCategoriesIris(data.balances)
+        console.log(data)
+      }catch(error){
+        console.log(error)
+      }
+    }
+
+    useEffect(() => {
+      retrieveCategoriesCrescent();
+    },[]);
+    
+      const retrieveCategoriesCrescent = async () => {
+        try{
+          const { data } = await axios.get('http://localhost:5000/balances/crescent/')
+          setCategoriesCrescent(data.balances)
+          console.log(data)
+        }catch(error){
+          console.log(error)
+        }
+      }
+
   return (
     <div className="App"> 
       <div className='container-fluid bg-black'>
@@ -86,25 +116,21 @@ useEffect(() => {
         <div className='row text-white text-center mt-5'>
           <div className='col-4'>
             <h4 className='border border-info'>Osmosis</h4>
-            {ibcListsOsmosis.map((ibcListsOsmosis,index) => (
+            <p>{JSON.stringify(categories)}</p>
+            {/* {ibcListsOsmosis.map((ibcListsOsmosis,index) => (
               <ul>
                   <li>{ibcListsOsmosis.denom}</li>
                   <li>{ibcListsOsmosis.alias}</li>
               </ul>
-            ))}
+            ))} */}
           </div>
           <div className='col-4'>
             <h4 className='border border-info'>Iris</h4>
-            <h2>{retrieveCategories}</h2>
+            <p>{JSON.stringify(categoriesIris)}</p>
           </div>
           <div className='col-4'>
             <h4 className='border border-info'>Crescent</h4>
-            {ibcListsOsmosis.map((ibcListsOsmosis,index) => (
-              <ul>
-                  <li>{ibcListsOsmosis.denom}</li>
-                  <li>{ibcListsOsmosis.alias}</li>
-              </ul>
-            ))}
+            <p>{JSON.stringify(categoriesCrescent)}</p>
           </div>
         </div>
         <div className='row text-white text-center mt-5 '>
