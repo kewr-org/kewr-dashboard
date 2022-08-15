@@ -78,7 +78,7 @@ useEffect(() => {
     const retrieveCategoriesIris = async () => {
       try{
         const { data } = await axios.get('http://localhost:5000/balances/iris/')
-        setCategoriesIris(data.balances)
+        setCategoriesIris(data.result)
         console.log(data)
       }catch(error){
         console.log(error)
