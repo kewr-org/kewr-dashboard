@@ -61,6 +61,8 @@ const ibcListsOsmosis = [
 
 useEffect(() => {
   retrieveCategories();
+  retrieveCategoriesCrescent();
+  retrieveCategoriesIris();
 },[]);
 
   const retrieveCategories = async () => {
@@ -73,10 +75,6 @@ useEffect(() => {
     }
   }
 
-  useEffect(() => {
-    retrieveCategoriesIris();
-  },[]);
-  
     const retrieveCategoriesIris = async () => {
       try{
         const { data } = await axios.get('http://localhost:5000/balances/iris/')
@@ -86,10 +84,6 @@ useEffect(() => {
         console.log(error)
       }
     }
-
-    useEffect(() => {
-      retrieveCategoriesCrescent();
-    },[]);
     
       const retrieveCategoriesCrescent = async () => {
         try{
