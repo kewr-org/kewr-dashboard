@@ -12,9 +12,9 @@ import { FaBeer,FaSort,FaAngleDoubleRight,FaExchangeAlt } from 'react-icons/fa';
 import axios from 'axios';
 
 function App() {
-const [categories, setCategories] = useState();
-const [categoriesIris, setCategoriesIris] = useState();
-const [categoriesCrescent, setCategoriesCrescent] = useState();
+const [categories, setCategories] = useState([]);
+const [categoriesIris, setCategoriesIris] = useState([]);
+const [categoriesCrescent, setCategoriesCrescent] = useState([]);
 const [address, setAddress] = useState('');
 
 //  keplr
