@@ -67,7 +67,15 @@ useEffect(() => {
       const retrieveCategoriesCrescent = async () => {
         try{
           const { data } = await axios.get('http://localhost:5000/balances/crescent/')
-          setCategoriesCrescent(data.balances)
+          const mapDataCrescent = data.balances.map((b) => {
+            const denom = b.denom
+            const getName = ibclistJSON.osmosis.filter(i => i.denom === denom)[0]
+            return {
+              denom: getName ? getName.alias : 'Not Found',
+              amount: b.amount
+            }
+          })  
+          setCategoriesCrescent(mapDataCrescent)
           console.log(data)
         }catch(error){
           console.log(error)
@@ -84,15 +92,15 @@ useEffect(() => {
           <div className='col-6 text-end'>
           <Button onClick={handleClick} variant='outline-info' className='text-white' ><img src={Keplr} width='30'/> {address ? address : 'Connect Wallet'} </Button>
           <Dropdown>
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
+      <Dropdown.Toggle variant="info" id="dropdown-basic">
         Chain Id
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
         <Dropdown.Item href="#/action-1" onClick={() => handleClick('cosmoshub-1')}>Cosmos</Dropdown.Item>
         <Dropdown.Item href="#/action-1" onClick={() => handleClick('osmosis-1')}>Osmosis</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Iris</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Crescent</Dropdown.Item>
+        <Dropdown.Item href="#/action-2" onClick={() => handleClick('irishub-1')} >Iris</Dropdown.Item>
+        <Dropdown.Item href="#/action-3" onClick={() => handleClick('crescent-1')}> Crescent </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
           <h4 className='text-white'></h4>
