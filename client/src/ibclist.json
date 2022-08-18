@@ -1,7 +1,8 @@
-{"osmosis" : [
+{
+    "osmosis" : [
     {
     "denom": "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2",
-    "alias": "ATOM (ATOM/Channel-0"
+    "alias": "ATOM (ATOM/Channel-0)"
     },
     {
     "denom": "ibc/6AE98883D4D5D5FF9E50D7130F1305DA2FFA0C652D1DD9C123657C6B4EB2DF8A",
@@ -13,7 +14,7 @@
     },
     {
     "denom": "ibc/FE2CD1E6828EC0FAB8AF39BAC45BC25B965BA67CCBC50C13A14BD610B0D1E2C4",
-    "alias": "BOOT (BOSTROM/Channel-95"
+    "alias": "BOOT (BOSTROM/Channel-95)"
     },
     {
     "denom": "ibc/785AFEC6B3741100D15E7AF01374E3C4C36F24888E96479B1C33F5C71F364EF9",
@@ -27,4 +28,41 @@
     "denom": "uosmo",
     "alias": "OSMO"
     }
-    ]}
+    ],
+
+    
+        "crescent": [
+          {
+            "denom": "ibc/BFF0D3805B50D93E2FA5C0B2DDF7E0B30A631076CD80BC12A48C0E95404B4A41",
+            "alias": "axlUSDC (Axelar/Channel-4)"
+          },
+          {
+            "denom": "ibc/C4CFF46FD6DE35CA4CF4CE031E643C8FDC9BA4B99AE598E9B0ED98FE3A2319F9",
+            "alias": "ATOM (ATOM/Channel-1"
+          },
+          {
+            "denom": "ibc/C950356239AD2A205DE09FDF066B1F9FF19A7CA7145EA48A5B19B76EE47E52F7",
+            "alias": "GRAV (GRAV/Channel-2)"
+          },
+          {
+            "denom": "ibc/CD01034D6749F20AAC5330EF4FD8B8CA7C40F7527AB8C4A302FBD2A070852EE1",
+            "alias": "USDC.grv(GRAV/channel-2)"
+          },
+          {
+            "denom": "ibc/DBF5FA602C46392DE9F4796A0FC7D02F3A8A3D32CA3FAA50B761D4AA6F619E95",
+            "alias": "WETH.grv(GRAV/Channel-2)"
+          },
+          {
+            "denom": "ibc/F1806958CA98757B91C3FA1573ECECD24F6FA3804F074A6977658914A49E65A3",
+            "alias": "axlWETH (Axelar/Channel-4)"
+          },
+          {
+            "denom": "ubcre",
+            "alias": "19096073286119"
+          },
+          {
+            "denom": "ucre",
+            "alias": "237948796303387"
+          }
+        ]
+      }
