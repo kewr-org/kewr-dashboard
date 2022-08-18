@@ -1,5 +1,5 @@
 {
-    "osmosis" : [
+    "ics20" : [
     {
     "denom": "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2",
     "alias": "ATOM (ATOM/Channel-0)"
@@ -27,12 +27,8 @@
     {
     "denom": "uosmo",
     "alias": "OSMO"
-    }
-    ],
-
-    
-        "crescent": [
-          {
+    },
+        {
             "denom": "ibc/BFF0D3805B50D93E2FA5C0B2DDF7E0B30A631076CD80BC12A48C0E95404B4A41",
             "alias": "axlUSDC (Axelar/Channel-4)"
           },

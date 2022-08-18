@@ -18,6 +18,7 @@ const [categories, setCategories] = useState([]);
 const [categoriesIris, setCategoriesIris] = useState([]);
 const [categoriesCrescent, setCategoriesCrescent] = useState([]);
 const [address, setAddress] = useState('');
+const [amount, setAmount] = useState(0)
 
 //  keplr
  async function handleClick(chain) {
@@ -41,7 +42,7 @@ useEffect(() => {
       
       const mapData = data.balances.map((b) => {
         const denom = b.denom
-        const getName = ibclistJSON.osmosis.filter(i => i.denom === denom)[0]
+        const getName = ibclistJSON.ics20.filter(i => i.denom === denom)[0]
         return {
           denom: getName ? getName.alias : 'Not Found',
           amount: b.amount
@@ -52,6 +53,11 @@ useEffect(() => {
     }catch(error){
       console.log(error)
     }
+  }
+
+  async function getAmount(value) {
+    const { data } = await axios.get('http://localhost:5000/balances/osmo/')
+    setAmount(value)
   }
 
     const retrieveCategoriesIris = async () => {
@@ -69,7 +75,7 @@ useEffect(() => {
           const { data } = await axios.get('http://localhost:5000/balances/crescent/')
           const mapDataCrescent = data.balances.map((b) => {
             const denom = b.denom
-            const getName = ibclistJSON.osmosis.filter(i => i.denom === denom)[0]
+            const getName = ibclistJSON.ics20.filter(i => i.denom === denom)[0]
             return {
               denom: getName ? getName.alias : 'Not Found',
               amount: b.amount
@@ -109,7 +115,7 @@ useEffect(() => {
         <div className='row text-white text-center d-flex justify-content-center mt-5'>
           <div className='col-5'>
             <h4 className='border border-info'>Osmosis</h4>
-            {/* <p>{JSON.stringify(categories)}</p> */}
+            
             <ul>
               {categories.map((data,index) => (
                 <p >- {data.denom} <br />{data.amount} </p>
@@ -135,12 +141,14 @@ useEffect(() => {
           </ul>
           </div>
         </row>
+
+        {/* swap */}
         <div className='row text-white text-center mt-5 '>
           <div className='col-2'>
             
             <h4 className='mt-5'> <img src={Osmosis} className='rounded-circle' width='50' /> Osmosis</h4>
             <select className='mt-5 form-select bg-black text-info border border-info'>
-              <option>Iris</option>
+              <option>Iris</option> 
               <option>Osmosis</option>
               <option>Gravity</option>
             </select>
@@ -153,6 +161,10 @@ useEffect(() => {
             <h4></h4>
             <Button variant='outline-info'>Swap</Button>
           </div>
+
+          <input type="number" onChange={(e) => getAmount(e.target.value)} placeholder="0" />
+          <input type="number" value={amount} placeholder="0" />
+
           <div className='col-2'>
           <h4 className='mt-5'><img src={Iris} className='rounded-circle' width='50' /> Iris</h4>
           <select className='mt-5 form-select bg-black text-white border border-white' >
