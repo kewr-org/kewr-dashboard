@@ -12,6 +12,7 @@ import { FaBeer,FaSort,FaAngleDoubleRight,FaExchangeAlt } from 'react-icons/fa';
 import axios from 'axios';
 import ibclistJSON from './ibclist.json';
 import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 function App() {
 const [categories, setCategories] = useState([]);
@@ -201,30 +202,33 @@ useEffect(() => {
           <img src={Logo} width="500"/>
           </div>
         </div>
+        {/* akhir swap */}
+
+        {/* IBC */}
         <div className='row mt-5'>
           <div className='col-6 text-white text-center'>
           <img src={Icon} width='400' />
           </div>
           <div className='col-6 text-white'>
             <div className='row mt-5'>
-            <div className='col-5'>
-            <select className='form-select bg-black text-info border border-info'>
-              <option>Osmosis</option>
-              <option>Gravity Bridge</option>
-              <option>Iris</option>
-              <option>Crescent</option>
-            </select>
-            </div>
-            <div className='col-2 text-center'>
-            <FaAngleDoubleRight size={40}/>
-            </div>
-            <div className='col-5'>
-            <select className='form-select bg-black text-info border border-info'>
-              <option>Osmosis</option>
-              <option>Gravity Bridge</option>
-              <option>Iris</option>
-              <option>Crescent</option>
-            </select>
+            <div className='col-12'>
+            <DropdownButton id="dropdown-basic-button" title="IBC Relayer">
+              <Dropdown.Item href="#/action-1">Osmosis -- CosmosHub</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Osmosis -- Gravity Bridge</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Osmosis -- Crescent</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Osmosis -- Iris</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Iris -- Gravity Bridge</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Iris -- Crescent</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Iris -- Osmosis</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Iris -- CosmosHub</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Gravity Bridge -- Iris</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Gravity Bridge -- Crescent</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Gravity Bridge -- Osmosis</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Gravity Bridge -- Cosmos</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Crescent -- CosmosHub</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Crescent -- Osmosis</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Crescent -- Gravity Bridge</Dropdown.Item>
+            </DropdownButton>
             </div>
           </div>
           <div className='row mt-5 text-center'>
@@ -266,6 +270,7 @@ useEffect(() => {
           </div>
             </div>
         </div>
+        {/* akhir IBC */}
       </div>
     </div>
   );
