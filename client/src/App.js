@@ -102,7 +102,6 @@ useEffect(() => {
       <Dropdown.Toggle variant="info" id="dropdown-basic">
         Chain Id
       </Dropdown.Toggle>
-
       <Dropdown.Menu>
         <Dropdown.Item href="#/action-1" onClick={() => handleClick('cosmoshub-1')}>Cosmos</Dropdown.Item>
         <Dropdown.Item href="#/action-1" onClick={() => handleClick('osmosis-1')}>Osmosis</Dropdown.Item>
@@ -116,7 +115,6 @@ useEffect(() => {
         <div className='row text-white text-center d-flex justify-content-center mt-5'>
           <div className='col-5'>
             <h4 className='border border-info'>Osmosis</h4>
-            
             <ul>
               {categories.map((data,index) => (
                 <p >- {data.denom} <br />{data.amount} </p>
