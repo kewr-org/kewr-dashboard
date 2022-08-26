@@ -13,23 +13,22 @@ import axios from 'axios';
 import ibclistJSON from './ibclist.json';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
+import Navbar from './components/navbar';
+import Balance from './components/balance';
 
 function App() {
 const [categories, setCategories] = useState([]);
 const [categoriesIris, setCategoriesIris] = useState([]);
 const [categoriesCrescent, setCategoriesCrescent] = useState([]);
-const [address, setAddress] = useState('');
-const [amount, setAmount] = useState(0)
+const [amount, setAmount] = useState(0);
+const [value,setValue] = useState();
 
-//  keplr
- async function handleClick(chain) {
-  const chainId = chain ? chain : 'cosmoshub-1'
-  await window.keplr.enable(chainId)
-  const offlineSigner = window.getOfflineSigner(chainId);
-  const accounts = await offlineSigner.getAccounts();
-  setAddress(accounts[0].address)
- }
-// akhir keplr
+
+
+const handleClickIBC = () => {
+  console.log("hello buoss")
+  setValue ("Osmosis -> CosmosHub")
+}
 
 useEffect(() => {
   retrieveCategories();
@@ -93,24 +92,7 @@ useEffect(() => {
     <div className="App"> 
       <div className='container-fluid bg-black'>
         <div className='row '>
-          <h3 className='text-white'><FaBeer /> Kewr</h3>
-          <div className='col-6'>
-          </div>
-          <div className='col-6 text-end'>
-          <Button onClick={handleClick} variant='outline-info' className='text-white' ><img src={Keplr} width='30'/> {address ? address : 'Connect Wallet'} </Button>
-          <Dropdown>
-      <Dropdown.Toggle variant="info" id="dropdown-basic">
-        Chain Id
-      </Dropdown.Toggle>
-      <Dropdown.Menu>
-        <Dropdown.Item href="#/action-1" onClick={() => handleClick('cosmoshub-1')}>Cosmos</Dropdown.Item>
-        <Dropdown.Item href="#/action-1" onClick={() => handleClick('osmosis-1')}>Osmosis</Dropdown.Item>
-        <Dropdown.Item href="#/action-2" onClick={() => handleClick('irishub-1')} >Iris</Dropdown.Item>
-        <Dropdown.Item href="#/action-3" onClick={() => handleClick('crescent-1')}> Crescent </Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
-          <h4 className='text-white'></h4>
-          </div>
+        <Navbar />
         </div>
         <div className='row text-white text-center d-flex justify-content-center mt-5'>
           <div className='col-5'>
@@ -210,23 +192,20 @@ useEffect(() => {
           <div className='col-6 text-white'>
             <div className='row mt-5'>
             <div className='col-12'>
-            <DropdownButton id="dropdown-basic-button" title="IBC Relayer">
-              <Dropdown.Item href="#/action-1">Osmosis -- CosmosHub</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Osmosis -- Gravity Bridge</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Osmosis -- Crescent</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Osmosis -- Iris</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Iris -- Gravity Bridge</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Iris -- Crescent</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Iris -- Osmosis</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Iris -- CosmosHub</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Gravity Bridge -- Iris</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Gravity Bridge -- Crescent</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Gravity Bridge -- Osmosis</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Gravity Bridge -- Cosmos</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Crescent -- CosmosHub</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Crescent -- Osmosis</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Crescent -- Gravity Bridge</Dropdown.Item>
-            </DropdownButton>
+            <select className='form-select bg-black text-white border border-info text-center'>
+              <option>CosmosHub - Osmosis</option>
+              <option>CosmosHub - Iris</option>
+              <option>CosmosHub - Gravity Bridge</option>
+              <option>CosmosHub - Crescent</option>
+              <option>Osmosis - CosmosHub</option>
+              <option>Osmosis - Iris</option>
+              <option>Osmosis - Gravity Bridge</option>
+              <option>Osmosis - </option>
+              <option>Iris - Osmosis</option>
+              <option>Iris - Osmosis</option>
+              <option>Iris - Osmosis</option>
+              <option>Iris - Osmosis</option>
+            </select>
             </div>
           </div>
           <div className='row mt-5 text-center'>
@@ -269,6 +248,7 @@ useEffect(() => {
             </div>
         </div>
         {/* akhir IBC */}
+        <Balance />
       </div>
     </div>
   );
