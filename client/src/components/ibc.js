@@ -1,0 +1,73 @@
+import React, {useState,useEffect} from 'react';
+import Icon from '../tangan.jpg';
+import {FaExchangeAlt} from 'react-icons/fa';
+import { Button } from 'react-bootstrap';
+
+function Ibc() {
+  return (
+    <div className='row mt-5'>
+      <div className='col-6 text-white text-center'>
+        <img src={Icon} width='400' />
+      </div>
+      <div className='col-6 text-white'>
+            <div className='row mt-5'>
+            <div className='col-12'>
+            <select className='form-select bg-black text-white border border-info text-center'>
+              <option>CosmosHub - Osmosis</option>
+              <option>CosmosHub - Iris</option>
+              <option>CosmosHub - Gravity Bridge</option>
+              <option>CosmosHub - Crescent</option>
+              <option>Osmosis - CosmosHub</option>
+              <option>Osmosis - Iris</option>
+              <option>Osmosis - Gravity Bridge</option>
+              <option>Osmosis - </option>
+              <option>Iris - Osmosis</option>
+              <option>Iris - Osmosis</option>
+              <option>Iris - Osmosis</option>
+              <option>Iris - Osmosis</option>
+            </select>
+            </div>
+          </div>
+          <div className='row mt-5 text-center'>
+            <div className='col-3 text-white'>
+              <h4>Select a Chain</h4>
+              <select className='form-select bg-black text-white border border-white'>
+                <option>Osmosis</option>
+                <option>Crescent</option>
+                <option>Iris</option>
+                <option>Grav</option>
+              </select>
+            </div>
+            <div className='col-2 text-white'>
+              <h4 className='mt-4'></h4>
+              <FaExchangeAlt size='40'/>
+            </div>
+            <div className='col-3 text-white'>
+              <h4>Select a Chain</h4>
+            <select className='form-select bg-black text-white border border-white'>
+                <option>Osmosis</option>
+                <option>Crescent</option>
+                <option>Iris</option>
+                <option>Grav</option>
+              </select>
+            </div>
+            <div className='col-2 text-white'>
+              <h4>Coin</h4>
+            <select className='form-select bg-black text-white border border-white'>
+                <option>Osmosis</option>
+                <option>Crescent</option>
+                <option>Iris</option>
+                <option>Grav</option>
+              </select>
+            </div>
+            <div className='col-2 text-white'>
+              <h4></h4>
+              <Button variant='outline-info mt-4'>Submit</Button>
+            </div>
+          </div>
+            </div>
+    </div>
+  )
+}
+
+export default Ibc
