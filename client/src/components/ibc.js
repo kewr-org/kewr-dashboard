@@ -4,6 +4,14 @@ import {FaExchangeAlt} from 'react-icons/fa';
 import { Button } from 'react-bootstrap';
 
 function Ibc() {
+
+  const [muncul, setMuncul] = useState();
+  async function setHandleClick() {
+    setMuncul('REWO TOTAL')
+    console.log('rewo')
+  }
+
+
   return (
     <div className='row mt-5'>
       <div className='col-6 text-white text-center'>
@@ -61,8 +69,8 @@ function Ibc() {
               </select>
             </div>
             <div className='col-2 text-white'>
-              <h4></h4>
-              <Button variant='outline-info mt-4'>Submit</Button>
+              <h4>{muncul}</h4>
+              <Button variant='outline-info mt-4' onClick={() =>setHandleClick ()}>Submit</Button>
             </div>
           </div>
             </div>
