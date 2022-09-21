@@ -18,26 +18,23 @@ function Swap() {
   return (
     <div className='row text-white text-center mt-5 '>
           <div className='col-2'>
-            
             <h4 className='mt-5'> <img src={Osmosis} className='rounded-circle' width='50' /> Osmosis</h4>
             <select className='mt-5 form-select bg-black text-info border border-info'>
-              <option>Iris</option> 
+              <option>Iris</option>
               <option>Osmosis</option>
               <option>Gravity</option>
             </select>
+            <input className='input bg-black text-white mt-2' type="number" onChange={(e) => getAmount(e.target.value)} placeholder="0" />
             <h4 className='mt-3'><FaSort/></h4>
             <select className='mt-3 form-select bg-black text-info border border-info'>
               <option>Iris</option>
               <option>Osmosis</option>
               <option>Gravity</option>
             </select>
+            <input className='input bg-black text-white mt-2' type="number" value={amount} placeholder="0" />
             <h4></h4>
             <Button variant='outline-info'>Swap</Button>
           </div>
-
-          <input type="number" onChange={(e) => getAmount(e.target.value)} placeholder="0" />
-          <input type="number" value={amount} placeholder="0" />
-
           <div className='col-2'>
           <h4 className='mt-5'><img src={Iris} className='rounded-circle' width='50' /> Iris</h4>
           <select className='mt-5 form-select bg-black text-white border border-white' >
@@ -45,12 +42,14 @@ function Swap() {
               <option>Osmosis</option>
               <option>Gravity</option>
             </select>
+            <input className='input bg-black text-white mt-2' type="number" onChange={(e) => getAmount(e.target.value)} placeholder="0" />
             <h4 className='mt-3'><FaSort/></h4>
             <select className='mt-3 form-select bg-black text-white border border-white'>
               <option>Iris</option>
               <option>Osmosis</option>
               <option>Gravity</option>
             </select>
+            <input className='input bg-black text-white mt-2' type="number" value={amount} placeholder="0" />
             <h4></h4>
             <Button variant='outline-light'>Swap</Button>
           </div>
@@ -61,12 +60,14 @@ function Swap() {
               <option>Osmosis</option>
               <option>Gravity</option>
             </select>
+            <input className='input bg-black outline-blue text-white mt-2' type="number" onChange={(e) => getAmount(e.target.value)} placeholder="0" />
             <h4 className='mt-3'><FaSort/></h4>
             <select className='mt-3 form-select bg-black text-info border border-info'>
               <option>Iris</option>
               <option>Osmosis</option>
               <option>Gravity</option>
             </select>
+            <input className='input bg-black text-white mt-2' type="number" value={amount} placeholder="0" />
             <h4></h4>
             <Button variant='outline-info'>Swap</Button>
           </div>
