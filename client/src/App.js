@@ -8,6 +8,7 @@ import Navbar from './components/navbar';
 import Balance from './components/balance';
 import Swap from './components/swap';
 import Ibc from './components/ibc';
+import Tes from './components/tesswap';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Balance />
         <Swap />
         <Ibc />
+        <Tes />
       </div>
     </div>
   );

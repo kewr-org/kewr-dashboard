@@ -22,7 +22,7 @@ function Navbar() {
     <div className='bg-black'>
       <div className='row'>
       <div className='col-6 text-white'>
-        <h3>Kewer Foundation</h3>
+        <h3>Kewr Foundation</h3>
       </div>
       <div className='col-6 text-white text-end'>
         <button className='btn btn-outline-info text-white'><img src={Keplr} width='30' /> {address ? address : 'Connect Wallet'}</button>

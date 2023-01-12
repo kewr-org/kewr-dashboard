@@ -7,7 +7,7 @@ function PriceCheckCrescent({url1, url2, url3}) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const {pool: {price: bCreData}} = await (await fetch(url1)).json();
+        const {pool: {price: bCreData}} = await (await fetch("https://mainnet.crescent.network:1317/crescent/liquidity/v1beta1/pools/3")).json();
         const {pool: {price: GravData}} = await (await fetch(url2)).json();
         const {pool: {price: AxlUsdtData}} = await (await fetch(url3)).json();
         setData({ bCreData, GravData, AxlUsdtData });
@@ -23,6 +23,7 @@ function PriceCheckCrescent({url1, url2, url3}) {
   };
 
   const calculate = (data) => {
+    console.log(calculate)
     return data * AtomAmount;
   }
 
@@ -36,9 +37,9 @@ function PriceCheckCrescent({url1, url2, url3}) {
       </form>
       <div>
         {data.bCreData ? (
-          <p>bCre : {calculate(data.bCreData)}</p>
+          <p>bCre : {calculate(data.pool.price)}</p>
         ) : (
-          <p>Loading...</p>
+          <p></p>
         )}
         {data.GravData ? (
           <p>Grav : {calculate(data.bCreData) / data.GravData}</p>
