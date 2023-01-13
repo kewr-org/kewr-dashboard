@@ -9,6 +9,7 @@ import Balance from './components/balance';
 import Swap from './components/swap';
 import Ibc from './components/ibc';
 import Tes from './components/tesswap';
+import PriceCheckCrescent from './components/PriceCheckCrescent'
 
 function App() {
   return (
@@ -22,6 +23,11 @@ function App() {
         <Ibc />
         <Tes />
       </div>
+      <PriceCheckCrescent 
+url1="https://mainnet.crescent.network:1317/crescent/liquidity/v1beta1/pools/3"
+url2="https://mainnet.crescent.network:1317/crescent/liquidity/v1beta1/pools/10" 
+url3="https://mainnet.crescent.network:1317/crescent/liquidity/v1beta1/pools/19"   
+/>
     </div>
   );
 }
