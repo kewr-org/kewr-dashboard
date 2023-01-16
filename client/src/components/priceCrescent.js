@@ -12,7 +12,7 @@ const [hasilUsd, setHasilUsd] = useState()
 const urlBcre = "https://mainnet.crescent.network:1317/crescent/liquidity/v1beta1/pools/3"
 const urlGrav = "https://mainnet.crescent.network:1317/crescent/liquidity/v1beta1/pools/10"
 const urlUsd = "https://mainnet.crescent.network:1317/crescent/liquidity/v1beta1/pools/19"
-const urlOsmoAtom = "https://osmosis-api.polkachu.com/osmosis/gamm/v1beta1/pools/1/prices?base_asset_denom=uosmo&quote_asset_denom=ibc%2F27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2"
+
 
 useEffect(() => {
   axios.get(urlBcre)
@@ -59,15 +59,23 @@ const handleChange = (event) => {
 }
 
   return (
-    <div className='text-white'>
-      <h1>Price Check Crescent</h1>
+    <div className='container text-center bg-black'>
+      <h4 className='border border-info text-white'>Price Check Crescent</h4>
       <form onSubmit={addPrice}>
-        <input onChange={handleChange}></input>
-        <button type='submit' className='btn btn-primary'>Click Check Price</button>
+        <input onChange={handleChange} className="input-lg" placeholder='Atom'></input>
+        <button type='submit' className='btn btn-outline-info'>Submt</button>
       </form>
-      <h1>BCRE : {hasilBcre}</h1>
-      <h1>GRAV : {hasilGrav}</h1>
-      <h1>USDC AXL : {hasilUsd}</h1>
+      <div className='row mt-2'>
+        <div className='col-4'>
+        <h4 className='text-white'>BCRE : {hasilBcre}</h4>
+        </div>
+        <div className='col-4'>
+        <h4 className='text-white'>GRAV : {hasilGrav}</h4>
+        </div>
+        <div className='col-4'>
+        <h4 className='text-white'>USDC AXL : {hasilUsd}</h4>
+        </div>
+      </div>
     </div>
   )
 }

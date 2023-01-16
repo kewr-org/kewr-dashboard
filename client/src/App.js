@@ -1,11 +1,12 @@
 import './App.css' ;
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, {useState,useEffect} from 'react';
+import React from 'react';
 import Navbar from './components/navbar';
 import Balance from './components/balance';
 import Swap from './components/swap';
 import Ibc from './components/ibc';
-import Tes from './components/tesswap';
+import Crescent from './components/priceCrescent';
+import Osmmosis from './components/priceOsmo';
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         <Balance />
         <Swap />
         <Ibc />
-        <Tes />
+        <Crescent />
+        <Osmmosis />
       </div>
     </div>
   );
