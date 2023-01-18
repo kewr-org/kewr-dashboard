@@ -1,5 +1,3 @@
-import './App.css' ;
-import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import Navbar from './components/navbar';
 import Balance from './components/balance';
