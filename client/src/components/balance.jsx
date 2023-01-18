@@ -61,7 +61,7 @@ const [categoriesCrescent, setCategoriesCrescent] = useState([]);
   };
 
   return (
-    <div className='row text-white text-center d-flex justify-content-center mt-5'>
+    <div className='grid grid-cols-3 gap-3 text-white text-center mb-5'>
           <div className='col-5'>
             <h4 className='border border-info'>Osmosis</h4>
             <ul>
@@ -78,8 +78,8 @@ const [categoriesCrescent, setCategoriesCrescent] = useState([]);
               ))}
           </ul>
           </div>
-          <div className='row justify-content-center text-white text-center d-flex mt-5'>
-            <div className='col-6'>
+          <div className='row justify-content-center  d-flex'>
+            <div className='col-5'>
               <h4 className='border border-info'>Crescent</h4>
               <ul>
               {categoriesCrescent.map((data,index) => (

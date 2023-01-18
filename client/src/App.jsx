@@ -14,10 +14,10 @@ function App() {
         <Navbar />
         </div>
         <Balance />
-        <Swap />
-        <Ibc />
         <Crescent />
         <Osmmosis />
+        {/* <Swap />
+        <Ibc /> */}
       </div>
     </div>
   );

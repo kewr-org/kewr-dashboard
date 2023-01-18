@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import Icon from '../tangan.jpg';
-import {FaExchangeAlt} from 'react-icons/fa';
 import { Button } from 'react-bootstrap';
 
 function Ibc() {
@@ -48,7 +47,6 @@ function Ibc() {
             </div>
             <div className='col-2 text-white'>
               <h4 className='mt-4'></h4>
-              <FaExchangeAlt size='40'/>
             </div>
             <div className='col-3 text-white'>
               <h4>Select a Chain</h4>

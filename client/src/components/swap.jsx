@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FaSort} from 'react-icons/fa';
 import { Button } from 'react-bootstrap';
 import axios from 'axios';
 import Logo from '../globe.jpeg';
@@ -25,7 +24,7 @@ function Swap() {
               <option>Gravity</option>
             </select>
             <input className='input bg-black text-white mt-2' type="number" onChange={(e) => getAmount(e.target.value)} placeholder="0" />
-            <h4 className='mt-3'><FaSort/></h4>
+            <h4 className='mt-3'></h4>
             <select className='mt-3 form-select bg-black text-info border border-info'>
               <option>Iris</option>
               <option>Osmosis</option>
@@ -43,7 +42,7 @@ function Swap() {
               <option>Gravity</option>
             </select>
             <input className='input bg-black text-white mt-2' type="number" onChange={(e) => getAmount(e.target.value)} placeholder="0" />
-            <h4 className='mt-3'><FaSort/></h4>
+            <h4 className='mt-3'></h4>
             <select className='mt-3 form-select bg-black text-white border border-white'>
               <option>Iris</option>
               <option>Osmosis</option>
@@ -62,7 +61,7 @@ function Swap() {
               <option>Atom</option>
             </select>
             <input className='input bg-black outline-blue text-white mt-2' type="number" onChange={(e) => getAmount(e.target.value)} placeholder="0" />
-            <h4 className='mt-3'><FaSort/></h4>
+            <h4 className='mt-3'></h4>
             <select className='mt-3 form-select bg-black text-info border border-info'>
               <option>Iris</option>
               <option>Osmosis</option>

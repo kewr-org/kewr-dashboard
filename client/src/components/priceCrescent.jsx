@@ -59,11 +59,11 @@ const handleChange = (event) => {
 }
 
   return (
-    <div className='container text-center bg-black'>
+    <div className='grid text-center bg-black'>
       <h4 className='border border-info text-white'>Price Check Crescent</h4>
       <form onSubmit={addPrice}>
         <input onChange={handleChange} className="input-lg" placeholder='Atom'></input>
-        <button type='submit' className='btn btn-outline-info'>Submt</button>
+        <button className="bg-cyan-500 text-white active:bg-cyan-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Submit</button>
       </form>
       <div className='row mt-2'>
         <div className='col-4'>

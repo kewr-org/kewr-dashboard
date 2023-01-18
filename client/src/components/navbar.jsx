@@ -25,7 +25,8 @@ function Navbar() {
         <h3>Kewr Foundation</h3>
       </div>
       <div className='col-6 text-white text-end'>
-        <button className='btn btn-outline-info text-white'><img src={Keplr} width='30' /> {address ? address : 'Connect Wallet'}</button>
+        <button className='btn btn-outline-info text-white'></button>
+        <button className="bg-cyan-500 text-white active:bg-cyan-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"><img src={Keplr} width='30' />{address ? address : 'Connect Wallet'}</button>
         <Dropdown>
       <Dropdown.Toggle variant="info" id="dropdown-basic">
         Chain Id

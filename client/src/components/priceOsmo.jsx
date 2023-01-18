@@ -45,11 +45,11 @@ function PriceOsmo() {
     }
 
   return (
-    <div className='container mt-5 text-white text-center'>
+    <div className='grid  mt-5 text-white text-center'>
         <h4 className='border border-info'>Price Check Osmosis</h4>
         <form onSubmit={handleSubmit}>
-            <input onChange={handleChange}  placeholder="Atom"></input>
-            <button className='btn btn-outline-info' type='submit'>Submit</button>
+            <input onChange={handleChange}  placeholder="Atom" className='text-black'></input>
+            <button className="bg-cyan-500 text-white active:bg-cyan-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="submit">Submit</button>
         </form>
         <div className='row mt-4'>
             <div className='col-4'>
