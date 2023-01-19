@@ -45,40 +45,15 @@ export default function AdminNavbar({ showSidebar, setShowSidebar }) {
                 </div>
 
                 <div className="flex justify-between items-center w-full">
-                    <h4 className="uppercase text-white text-sm tracking-wider mt-1">
-                        {location === '/'
-                            ? 'DASHBOARD'
-                            : location.toUpperCase().replace('/', '')}
-                    </h4>
+                <button class="bg-transparent hover:bg-white text-white font-semibold hover:text-black py-2 px-4 border border-white hover:border-transparent rounded">
+                            Connect Metamask
+                        </button>
 
                     <div className="flex">
-                        <NavbarInput placeholder="Search" />
-
-                        <div className="-mr-4 ml-6">
-                            <Dropdown
-                                color="transparent"
-                                buttonText={
-                                    <div className="w-12">
-                                        <Image src={ProfilePicture} rounded />
-                                    </div>
-                                }
-                                rounded
-                                style={{
-                                    padding: 0,
-                                    color: 'transparent',
-                                }}
-                            >
-                                <DropdownItem color="lightBlue">
-                                    Action
-                                </DropdownItem>
-                                <DropdownItem color="lightBlue">
-                                    Another Action
-                                </DropdownItem>
-                                <DropdownItem color="lightBlue">
-                                    Something Else
-                                </DropdownItem>
-                            </Dropdown>
-                        </div>
+                   
+                        <button class="bg-transparent hover:bg-white text-white font-semibold hover:text-black py-2 px-4 border border-white hover:border-transparent rounded">
+                            Connect Keplr
+                        </button>
                     </div>
                 </div>
             </div>

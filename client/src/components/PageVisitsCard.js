@@ -2,21 +2,47 @@ import Card from '@material-tailwind/react/Card';
 import CardHeader from '@material-tailwind/react/CardHeader';
 import CardBody from '@material-tailwind/react/CardBody';
 import Button from '@material-tailwind/react/Button';
+import { useState } from 'react';
 
 export default function PageVisitsCard() {
+
+    const [dataOsmo, setDataOsmo] = useState()
+
+    const handleChange = () => {
+        console.log("tes123")
+        setDataOsmo("tes123")
+    }
+
     return (
         <Card>
             <CardHeader color="blue" contentPosition="none">
                 <div className="w-full flex items-center justify-between">
-                    <h2 className="text-white text-2xl">Page Visits</h2>
-                    <Button
-                        color="transparent"
-                        buttonType="link"
-                        size="lg"
-                        style={{ padding: 0 }}
-                    >
-                        See More
-                    </Button>
+                    <h2 className="text-white text-2xl">Price Check</h2>
+                    <form>
+                    <input
+      type="number"
+      className="
+        form-control
+        block
+        w-full
+        px-3
+        py-1.5
+        text-base
+        font-normal
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+      "
+      id="exampleNumber0"
+      placeholder="Atom"
+      onChange={handleChange}
+    />
+                    </form>
                 </div>
             </CardHeader>
             <CardBody>
@@ -28,14 +54,18 @@ export default function PageVisitsCard() {
                                     ID
                                 </th>
                                 <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Name
+                                    Chain
                                 </th>
                                 <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Salary
+                                    Osmosis
                                 </th>
                                 <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Country
+                                    Iris
                                 </th>
+                                <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
+                                    Crescent
+                                </th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -47,7 +77,7 @@ export default function PageVisitsCard() {
                                     Dakota Rice
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $36,738
+                                    {dataOsmo}
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                     Niger

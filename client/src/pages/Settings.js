@@ -11,7 +11,7 @@ export default function Dashboard() {
                         <StatusCard
                             color="pink"
                             icon="trending_up"
-                            title="Traffic"
+                            title="Osmosis"
                             amount="350,897"
                             percentage="3.48"
                             percentageIcon="arrow_upward"

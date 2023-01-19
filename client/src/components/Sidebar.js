@@ -22,7 +22,7 @@ export default function Sidebar() {
                         rel="noreferrer"
                         className="mt-2 text-center w-full inline-block"
                     >
-                        <H6 color="gray">Material Tailwind</H6>
+                        <H6 color="gray">Kewr Dashboard</H6>
                     </a>
                     <div className="flex flex-col">
                         <hr className="my-4 min-w-full" />
@@ -59,7 +59,7 @@ export default function Sidebar() {
                                     Tables
                                 </NavLink>
                             </li>
-                            <li className="rounded-lg mb-2 text-gray-700">
+                            {/* <li className="rounded-lg mb-2 text-gray-700">
                                 <NavLink
                                     to="/maps"
                                     className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
@@ -136,7 +136,7 @@ export default function Sidebar() {
                                 >
                                     Free Download
                                 </a>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 </div>
