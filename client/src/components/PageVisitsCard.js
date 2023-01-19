@@ -51,19 +51,19 @@ export default function PageVisitsCard() {
                         <thead>
                             <tr>
                                 <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    ID
+                                    No
                                 </th>
                                 <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Chain
+                                    Dex
                                 </th>
                                 <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Osmosis
+                                    Coin
                                 </th>
                                 <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Iris
+                                    Coin
                                 </th>
                                 <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Crescent
+                                    Coin
                                 </th>
                                 
                             </tr>
@@ -74,13 +74,16 @@ export default function PageVisitsCard() {
                                     1
                                 </th>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Dakota Rice
+                                frontier.osmosis.zone
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                     {dataOsmo}
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Niger
+                                    tes123
+                                </td>
+                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    tes123
                                 </td>
                             </tr>
                             <tr>
@@ -88,13 +91,16 @@ export default function PageVisitsCard() {
                                     2
                                 </th>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Minerva Hooper
+                                app.crescent.network
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $23,789
+                                    tes123
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Curaçao
+                                    tes123
+                                </td>
+                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    tes123
                                 </td>
                             </tr>
                             <tr>
@@ -102,13 +108,16 @@ export default function PageVisitsCard() {
                                     3
                                 </th>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Sage Rodriguez
+                                app.slingshot.finance
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $56,142
+                                    tes123
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Netherlands
+                                    tes123
+                                </td>
+                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    tes123
                                 </td>
                             </tr>
                             <tr>
@@ -116,15 +125,19 @@ export default function PageVisitsCard() {
                                     4
                                 </th>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Philip Chaney
+                                app.diffusion.fi
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $38,735
+                                    tes123
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Korea, South
+                                    tes123
+                                </td>
+                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    tes123
                                 </td>
                             </tr>
+                            
                         </tbody>
                     </table>
                 </div>

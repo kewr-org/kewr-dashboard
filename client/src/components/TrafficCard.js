@@ -9,7 +9,7 @@ export default function TrafficCard() {
         <Card>
             <CardHeader color="purple" contentPosition="none">
                 <div className="w-full flex items-center justify-between">
-                    <h2 className="text-white text-2xl">Social Media</h2>
+                    <h2 className="text-white text-2xl">Nodes</h2>
                     <Button
                         color="transparent"
                         buttonType="link"
@@ -26,57 +26,69 @@ export default function TrafficCard() {
                         <thead className="thead-light">
                             <tr>
                                 <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Referral
+                                    RPC
                                 </th>
                                 <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Visitors
+                                    REST
                                 </th>
-                                <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left w-56"></th>
+                                <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
+                                    GRPC
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Facebook
+                                Notional https://rpc-osmosis-ia.cosmosia.notional.ventures/
                                 </th>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    1,480
+                                Notional https://api-osmosis-ia.cosmosia.notional.ventures/
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <Progress color="blue" value="60" />
+                                strangelove osmosis.strange.love:9090
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                crescent
+https://mainnet.crescent.network:26657
+                                </th>
+                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                crescent
+https://mainnet.crescent.network:1317
+                                </td>
+                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                crescent
+mainnet.crescent.network:9090
                                 </td>
                             </tr>
                             <tr>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Google
+                                Notional
+https://rpc-evmos-ia.cosmosia.notional.ventures:443
                                 </th>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    4,807
+                                TC Network
+https://rest.evmos.tcnetwork.io
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <Progress color="red" value="80" />
+                                evmos.org
+https://grpc.bd.evmos.org:9090
                                 </td>
                             </tr>
                             <tr>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Instagram
+                                BlockHunters 🎯
+https://rpc.cosmos.bh.rocks
                                 </th>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    3,678
+                                BlockHunters 🎯
+https://api.cosmos.bh.rocks
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <Progress color="indigo" value="75" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Twitter
-                                </th>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    2,645
-                                </td>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <Progress color="lightBlue" value="90" />
+                                chainapsis
+grpc-cosmoshub.blockapsis.com:429
                                 </td>
                             </tr>
                         </tbody>

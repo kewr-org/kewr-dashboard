@@ -1,8 +1,8 @@
 import Card from '@material-tailwind/react/Card';
 import CardRow from '@material-tailwind/react/CardRow';
-import LogoTes from '../assets/img/cosmos.png'
+import LogoTes from '../assets/img/crescent.png';
 
-export default function StatusCard({
+export default function StatusCardCrescent({
 }) {
     return (
         <div className="px-4 mb-10">
@@ -10,7 +10,7 @@ export default function StatusCard({
                 <CardRow className="text-center">
                     <img src={LogoTes} width="70" className='rounded-full'/>
                 </CardRow>
-                <h1 className='text-center text-white mt-2'>BALANCE COSMOS</h1>
+                <h1 className='text-center text-white mt-2'>BALANCE CRESCENT</h1>
                 <h1 className='text-white'>Iris :</h1>
                 <h1 className='text-white'>Cosmos :</h1>
                 <h1 className='text-white'>Gravity :</h1>
