@@ -1,14 +1,24 @@
 import { useLocation } from 'react-router-dom';
 import Button from '@material-tailwind/react/Button';
 import Icon from '@material-tailwind/react/Icon';
-import NavbarInput from '@material-tailwind/react/NavbarInput';
-import Image from '@material-tailwind/react/Image';
-import Dropdown from '@material-tailwind/react/Dropdown';
-import DropdownItem from '@material-tailwind/react/DropdownItem';
-import ProfilePicture from 'assets/img/team-1-800x800.jpg';
+import { useState } from 'react';
+import Keplr from '../assets/img/keplr.png';
+import Metamask from '../assets/img/metamask.png';
+import {useWeb3Context} from 'web3'
 
 export default function AdminNavbar({ showSidebar, setShowSidebar }) {
     const location = useLocation().pathname;
+    const [address, setAddress] = useState('');
+
+  //  keplr
+ async function handleClick(chain) {
+  const chainId = chain ? chain : 'cosmoshub-1'
+  await window.keplr.enable(chainId)
+  const offlineSigner = window.getOfflineSigner(chainId);
+  const accounts = await offlineSigner.getAccounts();
+  setAddress(accounts[0].address)
+ }
+// akhir keplr
 
     return (
         <nav className="bg-gray-800 md:ml-64 py-6 px-3">
@@ -45,15 +55,17 @@ export default function AdminNavbar({ showSidebar, setShowSidebar }) {
                 </div>
 
                 <div className="flex justify-between items-center w-full">
-                <button class="bg-transparent hover:bg-white text-white font-semibold hover:text-black py-2 px-4 border border-white hover:border-transparent rounded">
-                            Connect Metamask
+                <div className='flex border border-white'>
+                <img src={Metamask} width="40"/>
+                <button  className="bg-transparent hover:bg-white text-white font-semibold hover:text-black py-2 px-4 hover:border-transparent rounded">
+                        <strong>Connect Metamask</strong>   
                         </button>
-
-                    <div className="flex">
-                   
-                        <button class="bg-transparent hover:bg-white text-white font-semibold hover:text-black py-2 px-4 border border-white hover:border-transparent rounded">
-                            Connect Keplr
-                        </button>
+                </div>
+                    <div className="flex border border-white">
+                    <img src={Keplr} width="40"/>   
+                     <button onClick={() => handleClick('cosmoshub-1')} className="bg-transparent hover:bg-white text-white font-semibold hover:text-black py-2 px-4 hover:border-transparent rounded">
+                     <strong>{address ? address : 'Connect Keplr'}</strong>
+                     </button>
                     </div>
                 </div>
             </div>

@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import AdminNavbar from './AdminNavbar';
 import Icon from '@material-tailwind/react/Icon';
 import H6 from '@material-tailwind/react/Heading6';
+import KewrLogo from '../assets/img/kewr2.png';
 
 export default function Sidebar() {
     const [showSidebar, setShowSidebar] = useState('-left-64');
@@ -22,7 +23,7 @@ export default function Sidebar() {
                         rel="noreferrer"
                         className="mt-2 text-center w-full inline-block"
                     >
-                        <H6 color="gray">Kewr Dashboard</H6>
+                        <img src={KewrLogo} />
                     </a>
                     <div className="flex flex-col">
                         <hr className="my-4 min-w-full" />
