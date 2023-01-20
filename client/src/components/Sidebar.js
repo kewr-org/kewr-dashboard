@@ -60,28 +60,17 @@ export default function Sidebar() {
                                     Tables
                                 </NavLink>
                             </li>
-                            {/* <li className="rounded-lg mb-2 text-gray-700">
-                                <NavLink
-                                    to="/maps"
-                                    className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
-                                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
-                                >
-                                    <Icon name="map" size="2xl" />
-                                    Maps
-                                </NavLink>
-                            </li>
                             <li className="px-4 rounded-lg mb-2 text-gray-700">
                                 <a
-                                    href="https://demos.creative-tim.com/material-tailwind-kit-react/#/login"
-                                    target="_blank"
+                                    href="/customchain"
                                     rel="noreferrer"
                                     className="flex items-center gap-4 text-sm font-light py-3"
                                 >
                                     <Icon name="fingerprint" size="2xl" />
-                                    Login
+                                    Add Custom Chain
                                 </a>
                             </li>
-                            <li className="px-4 rounded-lg mb-2 text-gray-700">
+                            {/* <li className="px-4 rounded-lg mb-2 text-gray-700">
                                 <a
                                     href="https://demos.creative-tim.com/material-tailwind-kit-react/#/register"
                                     target="_blank"

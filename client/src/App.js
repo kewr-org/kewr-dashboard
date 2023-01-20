@@ -8,6 +8,7 @@ import Footer from 'components/Footer';
 
 // Tailwind CSS Style Sheet
 import 'assets/styles/tailwind.css';
+import AddChain from 'pages/AddChain';
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                     <Route exact path="/tables" component={Tables} />
                     <Route exact path="/settings" component={Settings} />
                     <Route exact path="/maps" component={Maps} />
+                    <Route exact path="/customchain" component={AddChain} />
                     <Redirect from="*" to="/" />
                 </Switch>
                 <Footer />
