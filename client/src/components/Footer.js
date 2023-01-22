@@ -4,12 +4,12 @@ export default function footer() {
             <p className="text-gray-700 mb-6 lg:mb-0">
                 Copyright &copy; {new Date().getFullYear()}{' '}
                 <a
-                    href="https://www.creative-tim.com?ref=mtdk"
+                    href="#"
                     target="_blank"
                     rel="noreferrer"
                     className="text-light-blue-500 hover:text-light-blue-700"
                 >
-                    Creative Tim
+                    Kewr Foundation
                 </a>
             </p>
 
@@ -19,7 +19,7 @@ export default function footer() {
                         className="text-gray-700 hover:text-gray-900 font-medium block text-sm"
                         target="_blank"
                         rel="noreferrer"
-                        href="https://www.creative-tim.com/presentation?ref=mtdk"
+                        href="#"
                     >
                         About Us
                     </a>
