@@ -10,7 +10,6 @@ export default function PageVisitsCard() {
     const [dataBcre, setDataBcre] = useState()
 const [dataGrav, setDataGrav] = useState()
 const [dataUsd, setDataUsd] = useState()
-const [DataOsmoIris, setDataOsmoIris] = useState()
 const [isiInput, setIsiIInput] = useState()
 const [hasilBcre, setHasilBcre] = useState()
 const [hasilGrav, setHasilGrav] = useState()
@@ -22,12 +21,17 @@ const urlUsd = "https://mainnet.crescent.network:1317/crescent/liquidity/v1beta1
 // osmo
     const [dataOsmo, setDataOsmo] = useState()
     const [dataOsmoGrav, setDataOsmoGrav] = useState()
+    const [DataOsmoIris, setDataOsmoIris] = useState()
     const [hasilOsmo, setHasilOsmo] = useState()
     const [hasilOsmoGrav, setHasilOsmoGrav] = useState()
+    const [hasilOsmoIris, setHasilOsmoIris] = useState()
     const urlOsmo = "https://osmosis-api.polkachu.com/osmosis/gamm/v1beta1/pools/1/prices?base_asset_denom=uosmo&quote_asset_denom=ibc%2F27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2"
     const urlOsmoGrav = "https://api.osl.zone/osmosis/gamm/v1beta1/pools/625/prices?base_asset_denom=uosmo&quote_asset_denom=ibc%2FE97634A40119F1898989C2A23224ED83FDD0A57EA46B3A094E287288D1672B44"
     const urlOsmoIris = "https://api.osl.zone/osmosis/gamm/v1beta1/pools/7/prices?base_asset_denom=uosmo&quote_asset_denom=ibc%2F7C4D60AA95E5A7558B0A364860979CA34B7FF8AAF255B87AF9E879374470CEC0"
 
+    // iris
+    const urlIris = "https://lcd-iris.keplr.app/irismod/coinswap/pools/lpt-3"
+    const [dataIris, setDataIris] = useState()
 
 useEffect(() => {
   axios.get(urlBcre)
@@ -89,6 +93,7 @@ const addPrice = (event) => {
   setHasilUsd(isiInput * dataUsd)
   setHasilOsmo(dataOsmo * isiInput)
   setHasilOsmoGrav(dataOsmo * isiInput / dataOsmoGrav)
+  setHasilOsmoIris(dataOsmo * isiInput / DataOsmoIris)
 }
 
 const handleChange = (event) => {
@@ -98,6 +103,7 @@ const handleChange = (event) => {
   setHasilUsd("")
   setHasilOsmo("")
   setHasilOsmoGrav("")
+  setHasilOsmoIris("")
 }
 
     return (
@@ -170,7 +176,7 @@ const handleChange = (event) => {
                                     GRAV : {hasilOsmoGrav}
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    IRIS : 
+                                    IRIS : {hasilOsmoIris} 
                                 </td>
                             </tr>
                             <tr>
