@@ -31,7 +31,11 @@ const urlUsd = "https://mainnet.crescent.network:1317/crescent/liquidity/v1beta1
 
     // iris
     const urlIrisIris = "https://lcd-iris.keplr.app/irismod/coinswap/pools/lpt-3"
+    const urlIrisIbc = "https://lcd-iris.keplr.app/irismod/coinswap/pools/lpt-3"
     const [dataIris, setDataIris] = useState()
+    const [hasilIris, setHasilIris] = useState()
+    const [dataIrisIbc, setDataIrisIbc] = useState()
+    
 
 useEffect(() => {
   axios.get(urlBcre)
@@ -85,9 +89,16 @@ axios.get(urlUsd)
         })
         axios.get(urlIrisIris)
         .then(response => {
-            console.log("iris-iris", response.data.spot_price)
-            setDataOsmoIris(response.data.spot_price)
-            console.log(response.data.pool.standard.amount);
+            console.log("iris-iris", response.data.pool.standard.amount)
+            setDataIris(response.data.pool.standard.amount)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+        axios.get(urlIrisIbc)
+        .then(response => {
+            console.log("iris-ibc", response.data.pool.token.amount)
+            setDataIrisIbc(response.data.pool.token.amount)
         })
         .catch(error => {
             console.log(error)
@@ -104,6 +115,7 @@ const addPrice = (event) => {
   setHasilOsmo(dataOsmo * isiInput)
   setHasilOsmoGrav(dataOsmo * isiInput / dataOsmoGrav)
   setHasilOsmoIris(dataOsmo * isiInput / DataOsmoIris)
+  setHasilIris(isiInput * dataIris / dataIrisIbc )
 }
 
 const handleChange = (event) => {
@@ -114,6 +126,7 @@ const handleChange = (event) => {
   setHasilOsmo("")
   setHasilOsmoGrav("")
   setHasilOsmoIris("")
+  setHasilIris("")
 }
 
     return (
@@ -214,13 +227,13 @@ const handleChange = (event) => {
                                 coinswap.market
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    tes123
+                                    IRIS : {hasilIris}
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    tes123
+                                    GRAV : 
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    tes123
+                                    USDC Grav :
                                 </td>
                             </tr>
                             <tr>
