@@ -30,7 +30,7 @@ const urlUsd = "https://mainnet.crescent.network:1317/crescent/liquidity/v1beta1
     const urlOsmoIris = "https://api.osl.zone/osmosis/gamm/v1beta1/pools/7/prices?base_asset_denom=uosmo&quote_asset_denom=ibc%2F7C4D60AA95E5A7558B0A364860979CA34B7FF8AAF255B87AF9E879374470CEC0"
 
     // iris
-    const urlIris = "https://lcd-iris.keplr.app/irismod/coinswap/pools/lpt-3"
+    const urlIrisIris = "https://lcd-iris.keplr.app/irismod/coinswap/pools/lpt-3"
     const [dataIris, setDataIris] = useState()
 
 useEffect(() => {
@@ -83,6 +83,16 @@ axios.get(urlUsd)
         .catch(error => {
             console.log(error)
         })
+        axios.get(urlIrisIris)
+        .then(response => {
+            console.log("iris-iris", response.data.spot_price)
+            setDataOsmoIris(response.data.spot_price)
+            console.log(response.data.pool.standard.amount);
+        })
+        .catch(error => {
+            console.log(error)
+        })
+
 })
 
 const addPrice = (event) => {

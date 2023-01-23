@@ -24,7 +24,7 @@ app.get("/balances/osmo", async (req, res) => {
 app.get("/balances/iris", async (req, res) => {
         try {
             const response = await axios({
-                url: "https://lcd-iris.keplr.app/bank/balances/iaa1g7dna0gp4nec5rza4q25htj0cjgswrxe0ldv65",
+                url: "https://lcd-iris.keplr.app/cosmos/bank/v1beta1/balances/iaa1g7dna0gp4nec5rza4q25htj0cjgswrxe0ldv65",
                 method: "get",
             });
             res.status(200).json(response.data);
