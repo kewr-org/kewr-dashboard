@@ -10,6 +10,7 @@ export default function PageVisitsCard() {
     const [dataBcre, setDataBcre] = useState()
 const [dataGrav, setDataGrav] = useState()
 const [dataUsd, setDataUsd] = useState()
+const [DataOsmoIris, setDataOsmoIris] = useState()
 const [isiInput, setIsiIInput] = useState()
 const [hasilBcre, setHasilBcre] = useState()
 const [hasilGrav, setHasilGrav] = useState()
@@ -65,6 +66,15 @@ axios.get(urlUsd)
         .then(response => {
             console.log("osmo-grav", response.data.spot_price)
             setDataOsmoGrav(response.data.spot_price)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+        axios.get(urlOsmoIris)
+        .then(response => {
+            console.log("osmo-iris", response.data.spot_price)
+            setDataOsmoIris(response.data.spot_price)
+            console.log(response.data.spot_price);
         })
         .catch(error => {
             console.log(error)
