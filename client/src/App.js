@@ -6,6 +6,7 @@ import Tables from 'pages/Tables';
 import Maps from 'pages/Maps';
 import Footer from 'components/Footer';
 
+
 // Tailwind CSS Style Sheet
 import 'assets/styles/tailwind.css';
 import AddChain from 'pages/AddChain';

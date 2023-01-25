@@ -4,7 +4,6 @@ import Icon from '@material-tailwind/react/Icon';
 import { useState } from 'react';
 import Keplr from '../assets/img/keplr.png';
 import Metamask from '../assets/img/metamask.png';
-import {useWeb3Context} from 'web3'
 
 export default function AdminNavbar({ showSidebar, setShowSidebar }) {
     const location = useLocation().pathname;

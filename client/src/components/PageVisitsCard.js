@@ -4,6 +4,7 @@ import CardBody from '@material-tailwind/react/CardBody';
 import Button from '@material-tailwind/react/Button';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
+import Crescent from './priceCheckCrescent'
 
 export default function PageVisitsCard() {
 //  crescent
@@ -31,13 +32,17 @@ const urlUsd = "https://mainnet.crescent.network:1317/crescent/liquidity/v1beta1
 
     // iris
     const urlIrisIris = "https://lcd-iris.keplr.app/irismod/coinswap/pools/lpt-3"
-    const urlIrisIbc = "https://lcd-iris.keplr.app/irismod/coinswap/pools/lpt-3"
+    const urlIrisGrav = "https://lcd-iris.keplr.app/irismod/coinswap/pools/lpt-4"
     const [dataIris, setDataIris] = useState()
+    const [dataIrisIrisGrav, setDataIrisIrisGrav] = useState()
+    const [dataIrisGrav, setDataIrisGrav] = useState()
     const [hasilIris, setHasilIris] = useState()
     const [dataIrisIbc, setDataIrisIbc] = useState()
+    const [hasilIrisGrav, setHasilIrisGrav] = useState()
     
 
 useEffect(() => {
+    // crescent
   axios.get(urlBcre)
   .then(response => {
       setDataBcre(response.data.pool.price)
@@ -62,9 +67,11 @@ axios.get(urlUsd)
   .catch(error => {
       console.log("Error dari urlUsd :",error)
   });
+
+//   osmosis
   axios.get(urlOsmo)
         .then(response => {
-            console.log("Osmo" , response.data.spot_price)
+            
             setDataOsmo(response.data.spot_price)
         })
         .catch(error => {
@@ -72,7 +79,7 @@ axios.get(urlUsd)
         });
         axios.get(urlOsmoGrav)
         .then(response => {
-            console.log("osmo-grav", response.data.spot_price)
+            
             setDataOsmoGrav(response.data.spot_price)
         })
         .catch(error => {
@@ -80,25 +87,36 @@ axios.get(urlUsd)
         })
         axios.get(urlOsmoIris)
         .then(response => {
-            console.log("osmo-iris", response.data.spot_price)
+            
             setDataOsmoIris(response.data.spot_price)
             console.log(response.data.spot_price);
         })
         .catch(error => {
             console.log(error)
         })
+
+        // iris
         axios.get(urlIrisIris)
         .then(response => {
-            console.log("iris-iris", response.data.pool.standard.amount)
+            
             setDataIris(response.data.pool.standard.amount)
+            setDataIrisIbc(response.data.pool.token.amount)
         })
         .catch(error => {
             console.log(error)
         })
-        axios.get(urlIrisIbc)
+        axios.get(urlIrisGrav)
         .then(response => {
-            console.log("iris-ibc", response.data.pool.token.amount)
-            setDataIrisIbc(response.data.pool.token.amount)
+            setDataIrisGrav(response.data.pool.standard.amount)
+            console.log("atom-> iris", response.data.pool.standard.amount)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+        axios.get(urlIrisGrav)
+        .then(response => {
+            console.log("grav e iris", response.data.pool.token.amount)
+            setDataIrisIrisGrav( response.data.pool.token.amount)
         })
         .catch(error => {
             console.log(error)
@@ -116,6 +134,7 @@ const addPrice = (event) => {
   setHasilOsmoGrav(dataOsmo * isiInput / dataOsmoGrav)
   setHasilOsmoIris(dataOsmo * isiInput / DataOsmoIris)
   setHasilIris(isiInput * dataIris / dataIrisIbc )
+  setHasilIrisGrav(isiInput * dataIrisGrav / dataIrisIrisGrav)
 }
 
 const handleChange = (event) => {
@@ -127,6 +146,8 @@ const handleChange = (event) => {
   setHasilOsmoGrav("")
   setHasilOsmoIris("")
   setHasilIris("")
+  setHasilGrav("")
+  setHasilIrisGrav("")
 }
 
     return (
@@ -202,6 +223,7 @@ const handleChange = (event) => {
                                     IRIS : {hasilOsmoIris} 
                                 </td>
                             </tr>
+                            <Crescent />
                             <tr>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                     2
@@ -230,7 +252,7 @@ const handleChange = (event) => {
                                     IRIS : {hasilIris}
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    GRAV : 
+                                    GRAV : {hasilIrisGrav} 
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                     USDC Grav :
