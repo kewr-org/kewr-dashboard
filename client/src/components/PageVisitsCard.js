@@ -5,6 +5,9 @@ import Button from '@material-tailwind/react/Button';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
 import Crescent from './priceCheckCrescent'
+import Osmosis from './priceCheckOsmosis'
+import Iris from './priceCheckIris'
+import Evmos from './priceCheckEvmos'
 
 export default function PageVisitsCard() {
 //  crescent
@@ -206,76 +209,10 @@ const handleChange = (event) => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    1
-                                </th>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                frontier.osmosis.zone
-                                </td>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    OSMO : {hasilOsmo}
-                                </td>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    GRAV : {hasilOsmoGrav}
-                                </td>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    IRIS : {hasilOsmoIris} 
-                                </td>
-                            </tr>
-                            <Crescent />
-                            <tr>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    2
-                                </th>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                app.crescent.network
-                                </td>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    BCRE : {hasilBcre}
-                                </td>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    GRAV : {hasilGrav}
-                                </td>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    USDC AXL : {hasilUsd}
-                                </td>
-                            </tr>
-                            <tr>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    3
-                                </th>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                coinswap.market
-                                </td>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    IRIS : {hasilIris}
-                                </td>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    GRAV : {hasilIrisGrav} 
-                                </td>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    USDC Grav :
-                                </td>
-                            </tr>
-                            <tr>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    4
-                                </th>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                app.diffusion.fi
-                                </td>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    tes123
-                                </td>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    tes123
-                                </td>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    tes123
-                                </td>
-                            </tr>
-                            
+                            <Osmosis hasilOsmo={hasilOsmo} hasilOsmoGrav={hasilOsmoGrav} hasilOsmoIris={hasilOsmoIris}/>
+                            <Crescent hasilBcre={hasilBcre} hasilGrav={hasilGrav} hasilUsd={hasilUsd}/>
+                            <Iris hasilIris={hasilIris} />
+                            <Evmos  />
                         </tbody>
                     </table>
                 </div>

@@ -1,28 +1,25 @@
 import React from 'react'
 
-function PriceCheckCrescent(props) {
-
-    
-
+function PriceCheckOsmosis(props) {
   return (
     <tr>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    2
+                                    1
                                 </th>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                app.crescent.network
+                                frontier.osmosis.zone
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    BCRE : {props.hasilBcre}
+                                    OSMO : {props.hasilOsmo}
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    GRAV : {props.hasilGrav}
+                                    GRAV : {props.hasilOsmoGrav}
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    USDC AXL : {props.hasilUsd}
+                                    IRIS :  {props.hasilOsmoIris}
                                 </td>
                             </tr>
   )
 }
 
-export default PriceCheckCrescent
+export default PriceCheckOsmosis

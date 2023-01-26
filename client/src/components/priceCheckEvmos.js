@@ -1,28 +1,25 @@
 import React from 'react'
 
-function PriceCheckCrescent(props) {
-
-    
-
+function PriceCheckEvmos() {
   return (
     <tr>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    2
+                                    4
                                 </th>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                app.crescent.network
+                                app.diffusion.fi
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    BCRE : {props.hasilBcre}
+                                    tes123
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    GRAV : {props.hasilGrav}
+                                    tes123
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    USDC AXL : {props.hasilUsd}
+                                    tes123
                                 </td>
                             </tr>
   )
 }
 
-export default PriceCheckCrescent
+export default PriceCheckEvmos
