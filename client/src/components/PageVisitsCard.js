@@ -35,13 +35,16 @@ const urlUsd = "https://mainnet.crescent.network:1317/crescent/liquidity/v1beta1
 
     // iris
     const urlIrisIris = "https://lcd-iris.keplr.app/irismod/coinswap/pools/lpt-3"
-    const urlIrisGrav = "https://lcd-iris.keplr.app/irismod/coinswap/pools/lpt-4"
+    const urlIrisGrav = "https://lcd-iris.keplr.app/irismod/coinswap/pools/lpt-6"
+    // Atom -> Iris
     const [dataIris, setDataIris] = useState()
-    const [dataIrisIrisGrav, setDataIrisIrisGrav] = useState()
-    const [dataIrisGrav, setDataIrisGrav] = useState()
-    const [hasilIris, setHasilIris] = useState()
+    const [dataIrisAtomIris, setDataIrisAtomIris] = useState()
+    const [hasilAtomIris, setHasilAtomIris] = useState()
     const [dataIrisIbc, setDataIrisIbc] = useState()
-    const [hasilIrisGrav, setHasilIrisGrav] = useState()
+    // Atom -> Grav
+    const [dataLpt6Uiris, setDataLpt6Uiris] = useState()
+    const [dataLpt6Grav, setDataLpt6Grav] = useState()
+    const [hasilCoinswapAtomGrav, setHasilCoinswapAtomGrav] = useState()
     
 
 useEffect(() => {
@@ -110,21 +113,14 @@ axios.get(urlUsd)
         })
         axios.get(urlIrisGrav)
         .then(response => {
-            setDataIrisGrav(response.data.pool.standard.amount)
+            setDataLpt6Uiris(response.data.pool.standard.amount)
             console.log("atom-> iris", response.data.pool.standard.amount)
+            setDataLpt6Grav(response.data.pool.token.amount)
+            console.log("Iris -> Grav", response.data.pool.token.amount)
         })
         .catch(error => {
             console.log(error)
         })
-        axios.get(urlIrisGrav)
-        .then(response => {
-            console.log("grav e iris", response.data.pool.token.amount)
-            setDataIrisIrisGrav( response.data.pool.token.amount)
-        })
-        .catch(error => {
-            console.log(error)
-        })
-
 })
 
 const addPrice = (event) => {
@@ -136,8 +132,8 @@ const addPrice = (event) => {
   setHasilOsmo(dataOsmo * isiInput)
   setHasilOsmoGrav(dataOsmo * isiInput / dataOsmoGrav)
   setHasilOsmoIris(dataOsmo * isiInput / DataOsmoIris)
-  setHasilIris(isiInput * dataIris / dataIrisIbc )
-  setHasilIrisGrav(isiInput * dataIrisGrav / dataIrisIrisGrav)
+  setHasilAtomIris(isiInput * dataIris / dataIrisIbc )
+  setHasilCoinswapAtomGrav(isiInput * dataIris / dataIrisIbc * dataLpt6Grav / dataLpt6Uiris )
 }
 
 const handleChange = (event) => {
@@ -148,9 +144,8 @@ const handleChange = (event) => {
   setHasilOsmo("")
   setHasilOsmoGrav("")
   setHasilOsmoIris("")
-  setHasilIris("")
-  setHasilGrav("")
-  setHasilIrisGrav("")
+  setHasilAtomIris("")
+  setHasilCoinswapAtomGrav("")
 }
 
     return (
@@ -211,7 +206,7 @@ const handleChange = (event) => {
                         <tbody>
                             <Osmosis hasilOsmo={hasilOsmo} hasilOsmoGrav={hasilOsmoGrav} hasilOsmoIris={hasilOsmoIris}/>
                             <Crescent hasilBcre={hasilBcre} hasilGrav={hasilGrav} hasilUsd={hasilUsd}/>
-                            <Iris hasilIris={hasilIris} />
+                            <Iris hasilAtomIris={hasilAtomIris} hasilAtomGrav={hasilCoinswapAtomGrav} />
                             <Evmos  />
                         </tbody>
                     </table>
