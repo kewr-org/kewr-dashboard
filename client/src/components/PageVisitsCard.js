@@ -7,7 +7,7 @@ import axios from 'axios';
 import Crescent from './priceCheckCrescent'
 import Osmosis from './priceCheckOsmosis'
 import Iris from './priceCheckIris'
-import Evmos from './priceCheckEvmos'
+import Canto from './priceCheckCanto'
 
 export default function PageVisitsCard() {
 //  crescent
@@ -36,18 +36,47 @@ const urlUsd = "https://mainnet.crescent.network:1317/crescent/liquidity/v1beta1
     // iris
     const urlIrisIris = "https://lcd-iris.keplr.app/irismod/coinswap/pools/lpt-3"
     const urlIrisGrav = "https://lcd-iris.keplr.app/irismod/coinswap/pools/lpt-6"
+    const urlIrisUsdc = "https://lcd-iris.keplr.app/irismod/coinswap/pools/lpt-4"
     // Atom -> Iris
     const [dataIris, setDataIris] = useState()
-    const [dataIrisAtomIris, setDataIrisAtomIris] = useState()
     const [hasilAtomIris, setHasilAtomIris] = useState()
     const [dataIrisIbc, setDataIrisIbc] = useState()
     // Atom -> Grav
     const [dataLpt6Uiris, setDataLpt6Uiris] = useState()
     const [dataLpt6Grav, setDataLpt6Grav] = useState()
     const [hasilCoinswapAtomGrav, setHasilCoinswapAtomGrav] = useState()
+    //  Atom -> USDC
+    const [dataLpt4Uiris, setDataLpt4Uiris] = useState()
+    const [dataLpt4Usdc, setDataLpt4Usdc] = useState()
+    const [hasilCoinswapAtomUsdc, setHasilCoinswapAtomUsdc] = useState()
+
+    //  CANTO
+    const [dataCanto, setDataCanto] = useState()
     
 
 useEffect(() => {
+    // Canto
+    fetch("https://slingshot.finance/api/v3/trade/", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+        "liquidityzone": "canto"
+    },
+    body: JSON.stringify({
+        fromAmount: isiInput,
+        from: "0xeceeefcee421d8062ef8d6b4d814efe4dc898265",
+        gasOptimized: false,
+        limit: "99",
+        threeHop: true,
+        to: "0x5fd55a1b9fc24967c4db09c513c3ba0dfa7ff687",
+        _unsafe: false
+    })
+})
+.then(response => response.json())
+.then(data => setDataCanto(data.estimatedOutput))
+.catch(error => console.error(error));
+
+
     // crescent
   axios.get(urlBcre)
   .then(response => {
@@ -77,7 +106,6 @@ axios.get(urlUsd)
 //   osmosis
   axios.get(urlOsmo)
         .then(response => {
-            
             setDataOsmo(response.data.spot_price)
         })
         .catch(error => {
@@ -85,7 +113,6 @@ axios.get(urlUsd)
         });
         axios.get(urlOsmoGrav)
         .then(response => {
-            
             setDataOsmoGrav(response.data.spot_price)
         })
         .catch(error => {
@@ -93,9 +120,7 @@ axios.get(urlUsd)
         })
         axios.get(urlOsmoIris)
         .then(response => {
-            
             setDataOsmoIris(response.data.spot_price)
-            console.log(response.data.spot_price);
         })
         .catch(error => {
             console.log(error)
@@ -114,14 +139,23 @@ axios.get(urlUsd)
         axios.get(urlIrisGrav)
         .then(response => {
             setDataLpt6Uiris(response.data.pool.standard.amount)
-            console.log("atom-> iris", response.data.pool.standard.amount)
             setDataLpt6Grav(response.data.pool.token.amount)
-            console.log("Iris -> Grav", response.data.pool.token.amount)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+        axios.get(urlIrisUsdc)
+        .then(response => {
+            setDataLpt4Uiris(response.data.pool.standard.amount)
+            setDataLpt4Usdc(response.data.pool.token.amount)
         })
         .catch(error => {
             console.log(error)
         })
 })
+
+// Canto
+
 
 const addPrice = (event) => {
   console.log(dataBcre)
@@ -134,6 +168,8 @@ const addPrice = (event) => {
   setHasilOsmoIris(dataOsmo * isiInput / DataOsmoIris)
   setHasilAtomIris(isiInput * dataIris / dataIrisIbc )
   setHasilCoinswapAtomGrav(isiInput * dataIris / dataIrisIbc * dataLpt6Grav / dataLpt6Uiris )
+  setHasilCoinswapAtomUsdc(isiInput *dataIris / dataIrisIbc * dataLpt4Usdc / dataLpt4Uiris)
+  
 }
 
 const handleChange = (event) => {
@@ -146,6 +182,8 @@ const handleChange = (event) => {
   setHasilOsmoIris("")
   setHasilAtomIris("")
   setHasilCoinswapAtomGrav("")
+  setHasilCoinswapAtomUsdc("")
+
 }
 
     return (
@@ -198,7 +236,7 @@ const handleChange = (event) => {
                                     Coin
                                 </th>
                                 <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Coin
+                                    Coin {dataCanto}
                                 </th>
                                 
                             </tr>
@@ -206,8 +244,8 @@ const handleChange = (event) => {
                         <tbody>
                             <Osmosis hasilOsmo={hasilOsmo} hasilOsmoGrav={hasilOsmoGrav} hasilOsmoIris={hasilOsmoIris}/>
                             <Crescent hasilBcre={hasilBcre} hasilGrav={hasilGrav} hasilUsd={hasilUsd}/>
-                            <Iris hasilAtomIris={hasilAtomIris} hasilAtomGrav={hasilCoinswapAtomGrav} />
-                            <Evmos  />
+                            <Iris hasilAtomIris={hasilAtomIris} hasilAtomGrav={hasilCoinswapAtomGrav} hasilAtomUsdc={hasilCoinswapAtomUsdc}/>
+                            <Canto  />
                         </tbody>
                     </table>
                 </div>
