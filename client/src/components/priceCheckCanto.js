@@ -1,6 +1,6 @@
 import React from 'react'
 
-function PriceCheckCanto() {
+function PriceCheckCanto(props) {
   return (
     <tr>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
@@ -10,10 +10,10 @@ function PriceCheckCanto() {
                                 app.slingshot.finance
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    tes123
+                                    Weth : {props.dataCantoWeth}
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    tes123
+                                    Usdc : {props.dataCantoUsdc}
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                     tes123

@@ -57,7 +57,7 @@ export default function Sidebar() {
                                     activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                                 >
                                     <Icon name="toc" size="2xl" />
-                                    Swap
+                                    IBC
                                 </NavLink>
                             </li>
                             <li className="px-4 rounded-lg mb-2 text-gray-700">

@@ -19,6 +19,28 @@ export default function AdminNavbar({ showSidebar, setShowSidebar }) {
  }
 // akhir keplr
 
+//  Metamask 
+
+const [walletAdress, setWalletAdress] = useState()
+    async function connectMetamask() {
+        console.log("req akun")
+
+        if(window.ethereum) {
+            console.log("terdetek metamask")
+
+            try {
+               const accounts = await window.ethereum.request({
+                method: "eth_requestAccounts"
+               });
+               setWalletAdress(accounts)
+            }catch(error){
+                console.log("error tidak connect")
+            }
+        }else{
+            console.log("tidak terdeteksi metamask")
+        }
+    }
+
     return (
         <nav className="bg-gray-800 md:ml-64 py-6 px-3">
             <div className="container max-w-full mx-auto flex items-center justify-between md:pr-8 md:pl-10">
@@ -56,8 +78,8 @@ export default function AdminNavbar({ showSidebar, setShowSidebar }) {
                 <div className="flex justify-between items-center w-full">
                 <div className='flex border border-white'>
                 <img src={Metamask} width="40"/>
-                <button  className="bg-transparent hover:bg-white text-white font-semibold hover:text-black py-2 px-4 hover:border-transparent rounded">
-                        <strong>Connect Metamask</strong>   
+                <button onClick={connectMetamask} className="bg-transparent hover:bg-white text-white font-semibold hover:text-black py-2 px-4 hover:border-transparent rounded">
+                        <strong>{walletAdress ? walletAdress : "Connect Metamask"}</strong>   
                         </button>
                 </div>
                     <div className="flex border border-white">

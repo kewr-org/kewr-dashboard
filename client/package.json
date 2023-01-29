@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://kewr.org",
   "dependencies": {
+    "@cosmjs/stargate": "^0.29.5",
     "@material-tailwind/react": "^0.3.4",
     "@react-google-maps/api": "^2.1.1",
     "@testing-library/jest-dom": "^5.11.4",

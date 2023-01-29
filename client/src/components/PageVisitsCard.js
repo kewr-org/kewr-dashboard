@@ -51,11 +51,14 @@ const urlUsd = "https://mainnet.crescent.network:1317/crescent/liquidity/v1beta1
     const [hasilCoinswapAtomUsdc, setHasilCoinswapAtomUsdc] = useState()
 
     //  CANTO
-    const [dataCanto, setDataCanto] = useState()
+    const [dataCantoWeth, setDataCantoWeth] = useState()
+    const [dataCantoUsdc, setDataCantoUsdc] = useState()
     
 
 useEffect(() => {
     // Canto
+
+    // WETH
     fetch("https://slingshot.finance/api/v3/trade/", {
     method: "POST",
     headers: {
@@ -73,8 +76,31 @@ useEffect(() => {
     })
 })
 .then(response => response.json())
-.then(data => setDataCanto(data.estimatedOutput))
+.then(data => setDataCantoWeth(data.estimatedOutput))
 .catch(error => console.error(error));
+
+    // USDC
+    fetch("https://slingshot.finance/api/v3/trade/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "liquidityzone": "canto"
+        },
+        body: JSON.stringify({
+            fromAmount: isiInput,
+            from: "0xeceeefcee421d8062ef8d6b4d814efe4dc898265",
+            gasOptimized: false,
+            limit: "99",
+            threeHop: true,
+            to: "0x80b5a32e4f032b2a058b4f29ec95eefeeb87adcd",
+            _unsafe: false,
+            recipient: "0xa500ce5be001df63785790aa2deeaf986794de29"
+        })
+    })
+    .then(response => response.json())
+    .then(data => console.log("USDC", data.estimatedOutput))
+    .catch(error => console.error(error));
+    
 
 
     // crescent
@@ -236,7 +262,7 @@ const handleChange = (event) => {
                                     Coin
                                 </th>
                                 <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Coin {dataCanto}
+                                    Coin 
                                 </th>
                                 
                             </tr>
@@ -245,7 +271,7 @@ const handleChange = (event) => {
                             <Osmosis hasilOsmo={hasilOsmo} hasilOsmoGrav={hasilOsmoGrav} hasilOsmoIris={hasilOsmoIris}/>
                             <Crescent hasilBcre={hasilBcre} hasilGrav={hasilGrav} hasilUsd={hasilUsd}/>
                             <Iris hasilAtomIris={hasilAtomIris} hasilAtomGrav={hasilCoinswapAtomGrav} hasilAtomUsdc={hasilCoinswapAtomUsdc}/>
-                            <Canto  />
+                            <Canto dataCantoWeth={dataCantoWeth} dataCantoUsdc={dataCantoUsdc} />
                         </tbody>
                     </table>
                 </div>
