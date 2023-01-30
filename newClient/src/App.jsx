@@ -1,23 +1,27 @@
-import React from 'react';
-import { Link, BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-
+import React from "react";
+import { Link, BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import MainRoute from "./components/MainRoute";
+import NewSideBarMenu from "./components/newSideBarMenu";
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <div className='container-lg-auto p-2'>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/page1' element={<PageOne />} />
-          <Route path='/page2' element={<PageTwo />} />
-          <Route path='/page3' element={<PageThree />} />
-          <Route path='/page4' element={<PageFour />} />
-          <Route path='/page5' element={<PageFive />} />
-          <Route path='*' element={<Error />} />
-        </Routes>
-      </div>
+      <header>
+        <Header />
+      </header>
+      <main>
+        <div class="flex flex-col md:flex-row">
+          <nav aria-label="alternative nav" className="bg-gray-800">
+            <NewSideBarMenu />
+          </nav>
+          <section className="bg-gray-800">
+            <MainRoute />
+          </section>
+        </div>
+      </main>
+
       <Footer />
     </Router>
   );
