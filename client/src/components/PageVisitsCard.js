@@ -53,7 +53,8 @@ const urlUsd = "https://mainnet.crescent.network:1317/crescent/liquidity/v1beta1
     //  CANTO
     const [dataCantoWeth, setDataCantoWeth] = useState()
     const [dataCantoUsdc, setDataCantoUsdc] = useState()
-    
+    const [hasilCantoWeth, setHasilCantoWeth] = useState()
+    const [hasilCantoUsdc, setHasilCantoUsdc] = useState()
 
 useEffect(() => {
     // Canto
@@ -66,7 +67,7 @@ useEffect(() => {
         "liquidityzone": "canto"
     },
     body: JSON.stringify({
-        fromAmount: isiInput,
+        fromAmount: "1",
         from: "0xeceeefcee421d8062ef8d6b4d814efe4dc898265",
         gasOptimized: false,
         limit: "99",
@@ -87,18 +88,17 @@ useEffect(() => {
             "liquidityzone": "canto"
         },
         body: JSON.stringify({
-            fromAmount: isiInput,
+            fromAmount: "1000000",
             from: "0xeceeefcee421d8062ef8d6b4d814efe4dc898265",
             gasOptimized: false,
             limit: "99",
             threeHop: true,
             to: "0x80b5a32e4f032b2a058b4f29ec95eefeeb87adcd",
             _unsafe: false,
-            recipient: "0xa500ce5be001df63785790aa2deeaf986794de29"
         })
     })
     .then(response => response.json())
-    .then(data => console.log("USDC", data.estimatedOutput))
+    .then(data => setDataCantoUsdc(data.estimatedOutput))
     .catch(error => console.error(error));
     
 
@@ -195,7 +195,8 @@ const addPrice = (event) => {
   setHasilAtomIris(isiInput * dataIris / dataIrisIbc )
   setHasilCoinswapAtomGrav(isiInput * dataIris / dataIrisIbc * dataLpt6Grav / dataLpt6Uiris )
   setHasilCoinswapAtomUsdc(isiInput *dataIris / dataIrisIbc * dataLpt4Usdc / dataLpt4Uiris)
-  
+  setHasilCantoWeth(isiInput * dataCantoWeth / 1000000000000)
+  setHasilCantoUsdc(isiInput * dataCantoUsdc / 1000000)
 }
 
 const handleChange = (event) => {
@@ -209,7 +210,7 @@ const handleChange = (event) => {
   setHasilAtomIris("")
   setHasilCoinswapAtomGrav("")
   setHasilCoinswapAtomUsdc("")
-
+  setHasilCantoWeth("")
 }
 
     return (
@@ -271,7 +272,7 @@ const handleChange = (event) => {
                             <Osmosis hasilOsmo={hasilOsmo} hasilOsmoGrav={hasilOsmoGrav} hasilOsmoIris={hasilOsmoIris}/>
                             <Crescent hasilBcre={hasilBcre} hasilGrav={hasilGrav} hasilUsd={hasilUsd}/>
                             <Iris hasilAtomIris={hasilAtomIris} hasilAtomGrav={hasilCoinswapAtomGrav} hasilAtomUsdc={hasilCoinswapAtomUsdc}/>
-                            <Canto dataCantoWeth={dataCantoWeth} dataCantoUsdc={dataCantoUsdc} />
+                            <Canto dataCantoWeth={hasilCantoWeth} dataCantoUsdc={hasilCantoUsdc} />
                         </tbody>
                     </table>
                 </div>
