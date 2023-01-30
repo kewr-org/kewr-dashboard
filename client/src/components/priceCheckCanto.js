@@ -13,10 +13,10 @@ function PriceCheckCanto(props) {
                                     Weth : {props.dataCantoWeth}
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Usdc : {props.dataCantoUsdc}
+                                    Usdc : {props.dataCantoUsdc} ││ Usdt : {props.dataCantoUsdt}
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    tes123
+                                    Canto : {props.dataCanto}
                                 </td>
                             </tr>
   )

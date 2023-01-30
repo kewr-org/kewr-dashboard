@@ -53,8 +53,12 @@ const urlUsd = "https://mainnet.crescent.network:1317/crescent/liquidity/v1beta1
     //  CANTO
     const [dataCantoWeth, setDataCantoWeth] = useState()
     const [dataCantoUsdc, setDataCantoUsdc] = useState()
+    const [dataCantoUsdt, setDataCantoUsdt] = useState()
+    const [dataCanto, setDataCanto] = useState()
     const [hasilCantoWeth, setHasilCantoWeth] = useState()
     const [hasilCantoUsdc, setHasilCantoUsdc] = useState()
+    const [hasilCantoUsdt, setHasilCantoUsdt] = useState()
+    const [hasilCanto, setHasilCanto] = useState()
 
 useEffect(() => {
     // Canto
@@ -99,6 +103,49 @@ useEffect(() => {
     })
     .then(response => response.json())
     .then(data => setDataCantoUsdc(data.estimatedOutput))
+    .catch(error => console.error(error));
+
+
+    // USDT
+    fetch("https://slingshot.finance/api/v3/trade/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "liquidityzone": "canto"
+        },
+        body: JSON.stringify({
+            fromAmount: "1000000",
+            from: "0xeceeefcee421d8062ef8d6b4d814efe4dc898265",
+            gasOptimized: false,
+            limit: "99",
+            threeHop: true,
+            to: "0xd567b3d7b8fe3c79a1ad8da978812cfc4fa05e75",
+            _unsafe: false,
+        })
+    })
+    .then(response => response.json())
+    .then(data => setDataCantoUsdt(data.estimatedOutput))
+    .catch(error => console.error(error));
+
+    //  canto coin
+    fetch("https://slingshot.finance/api/v3/trade/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "liquidityzone": "canto"
+        },
+        body: JSON.stringify({
+            fromAmount: "1",
+            from: "0xeceeefcee421d8062ef8d6b4d814efe4dc898265",
+            gasOptimized: false,
+            limit: "99",
+            threeHop: true,
+            to: "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+            _unsafe: false,
+        })
+    })
+    .then(response => response.json())
+    .then(data => setDataCanto(data.estimatedOutput))
     .catch(error => console.error(error));
     
 
@@ -197,6 +244,8 @@ const addPrice = (event) => {
   setHasilCoinswapAtomUsdc(isiInput *dataIris / dataIrisIbc * dataLpt4Usdc / dataLpt4Uiris)
   setHasilCantoWeth(isiInput * dataCantoWeth / 1000000000000)
   setHasilCantoUsdc(isiInput * dataCantoUsdc / 1000000)
+  setHasilCantoUsdt(isiInput * dataCantoUsdt / 1000000)
+  setHasilCanto(isiInput * dataCanto / 1000000000000)
 }
 
 const handleChange = (event) => {
@@ -211,6 +260,7 @@ const handleChange = (event) => {
   setHasilCoinswapAtomGrav("")
   setHasilCoinswapAtomUsdc("")
   setHasilCantoWeth("")
+  setHasilCantoUsdc("")
 }
 
     return (
@@ -272,7 +322,7 @@ const handleChange = (event) => {
                             <Osmosis hasilOsmo={hasilOsmo} hasilOsmoGrav={hasilOsmoGrav} hasilOsmoIris={hasilOsmoIris}/>
                             <Crescent hasilBcre={hasilBcre} hasilGrav={hasilGrav} hasilUsd={hasilUsd}/>
                             <Iris hasilAtomIris={hasilAtomIris} hasilAtomGrav={hasilCoinswapAtomGrav} hasilAtomUsdc={hasilCoinswapAtomUsdc}/>
-                            <Canto dataCantoWeth={hasilCantoWeth} dataCantoUsdc={hasilCantoUsdc} />
+                            <Canto dataCantoUsdt={hasilCantoUsdt} dataCantoWeth={hasilCantoWeth} dataCantoUsdc={hasilCantoUsdc} dataCanto={hasilCanto}/>
                         </tbody>
                     </table>
                 </div>
