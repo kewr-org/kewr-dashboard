@@ -1,24 +1,62 @@
-import React from "react";
-import LogoOsmo from '../../assets/osmosis.svg'
+import React,{useState, useEffect} from "react";
+import axios from "axios";
 
-function PriceCheckOsmo() {
+
+function PriceCheckOsmo({onDataOsmo,onDataZoneGrav,onDataZoneIris,onHasilOsmo,onHasilZoneGrav,onHasilZoneIris}) {
+
+    const urlOsmo = "https://osmosis-api.polkachu.com/osmosis/gamm/v1beta1/pools/1/prices?base_asset_denom=uosmo&quote_asset_denom=ibc%2F27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2"
+    const urlOsmoGrav = "https://api.osl.zone/osmosis/gamm/v1beta1/pools/625/prices?base_asset_denom=uosmo&quote_asset_denom=ibc%2FE97634A40119F1898989C2A23224ED83FDD0A57EA46B3A094E287288D1672B44"
+    const urlOsmoIris = "https://api.osl.zone/osmosis/gamm/v1beta1/pools/7/prices?base_asset_denom=uosmo&quote_asset_denom=ibc%2F7C4D60AA95E5A7558B0A364860979CA34B7FF8AAF255B87AF9E879374470CEC0"
+
+  useEffect(() => {
+    axios.get(urlOsmo)
+        .then(response => {
+         console.log("osmo",response.data.spot_price)
+         if(onDataOsmo){
+          onDataOsmo(response.data.spot_price)
+         }
+    })
+        .catch(error => {
+        console.log(error)
+    })
+    axios.get(urlOsmoGrav)
+        .then(response => {
+            console.log(response.data.spot_price)
+            if(onDataZoneGrav){
+              onDataZoneGrav(response.data.spot_price)
+            }
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    axios.get(urlOsmoIris)
+        .then(response => {
+            console.log(response.data.spot_price)
+            if(onDataZoneIris){
+              onDataZoneIris(response.data.spot_price)
+            }
+        })
+        .catch(error => {
+            console.log(error)
+        })
+  })
+
   return (
     <div className="w-full md:w-1/2 xl:w-1/3 p-6">
-      <div className="bg-gradient-to-b from-indigo-200 to-indigo-100 border-b-4 border-indigo-500 rounded-lg shadow-xl p-5">
-        <div className="flex flex-row items-center">
-          <div className="flex-shrink pr-4">
-            <div className="rounded-full p-5 bg-indigo-600">
-              <i className="fa fa-wallet fa-2x fa-inverse"></i>
-            </div>
-          </div>
-          <div className="flex-1 text-right md:text-center">
-            <h2 className="font-bold uppercase text-gray-600">Osmosis Zone</h2>
+       <div className="bg-gray border border-purple-400 rounded-lg shadow-xl p-5">
+    <div className="flex flex-row items-center">
+      <div className="flex-1 text-right md:text-center">
+        <h1 className="font-bold uppercase text-purple-400 mb-3">- Osmosis -</h1>
+        <p className="font-bold text-1xl text-purple-400">
+              Osmosis : {onHasilOsmo}
+            </p>
 
-            <p className="font-bold text-3xl">
-              
-              <span className="text-green-500">
-                <i className="fas fa-caret-up"></i>
-              </span>
+            <p className="font-bold text-1xl text-purple-400">
+              Grav : {onHasilZoneGrav}
+            </p>
+
+            <p className="font-bold text-1xl text-purple-400">
+              Iris : {onHasilZoneIris}
             </p>
           </div>
         </div>

@@ -9,13 +9,25 @@ import PriceCheckOsmo from "./PriceCheck/PriceCheckOsmo";
 function PriceCheck() {
 
   const [isiInput, setIsiInput] = useState()
+  
+  // state crescent
   const [dataBcre, setDataBcre] = useState()
   const [dataGrav, setDataGrav] = useState()
   const [dataUsd, setDataUsd] = useState()
   const [hasilBcre, setHasilBcre] = useState()
   const [hasilGrav, setHasilGrav] = useState()
   const [hasilUsd, setHasilUsd] = useState()
+  // akhir state crescent
 
+  //  state osmo
+  const [dataOsmo, setDataOsmo] = useState()
+  const [dataZoneGrav, setDataZoneGrav] = useState()
+  const [dataZoneIris, setDataZoneIris] = useState()
+  const [hasilOsmo, setHasilOsmo] = useState()
+  const [hasilZoneGrav, setHasilZoneGrav] = useState()
+  const [hasilZoneIris, setHasilZoneIris] = useState()
+
+  // crescent
   const handleDataBcre = value => {
     setDataBcre(value)
   }
@@ -27,12 +39,30 @@ function PriceCheck() {
   const handleDataUsd = value => {
     setDataUsd(value)
   }
+  // akhir crescent
+
+  // osmo
+
+  const handleDataOsmo = value => {
+    setDataOsmo(value)
+  }
+
+  const handleDataZoneGrav = value => {
+    setDataZoneGrav(value)
+  }
+
+  const handleDataZoneIris = value => {
+    setDataZoneIris(value)
+  }
 
   const addPrice = (event) => {
     event.preventDefault()
     setHasilBcre(dataBcre * isiInput)
     setHasilGrav(isiInput * dataBcre / dataGrav)
     setHasilUsd(isiInput * dataUsd)
+    setHasilOsmo(isiInput * dataOsmo)
+    setHasilZoneGrav(isiInput * dataOsmo / dataZoneGrav)
+    setHasilZoneIris(isiInput * dataOsmo / dataZoneIris)
   }
 
   const handleChange = (event) => {
@@ -40,6 +70,9 @@ function PriceCheck() {
     setHasilBcre("")
     setHasilGrav("")
     setHasilUsd("")
+    setHasilOsmo("")
+    setHasilZoneGrav("")
+    setHasilZoneIris("")
   }
 
   return (
@@ -56,7 +89,7 @@ function PriceCheck() {
         </div>
       </div>
       <div className="flex flex-wrap">
-        <PriceCheckOsmo />
+        <PriceCheckOsmo onDataOsmo={handleDataOsmo} onDataZoneGrav={handleDataZoneGrav} onDataZoneIris={handleDataZoneIris} onHasilOsmo={hasilOsmo} onHasilZoneGrav={hasilZoneGrav} onHasilZoneIris={hasilZoneIris}/>
         <PriceCheckCrescent onDataBcre={handleDataBcre} onDataGrav={handleDataGrav} onDataUsd={handleDataUsd} onHasilBcre={hasilBcre} onHasilGrav={hasilGrav} onHasilUsd={hasilUsd}/>
         <PriceCheckIris />
         <BalanceDummy />

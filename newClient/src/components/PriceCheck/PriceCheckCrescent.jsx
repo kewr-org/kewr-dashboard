@@ -14,7 +14,6 @@ function PriceCheckCrescent({onDataBcre,onDataGrav,onDataUsd,onHasilBcre,onHasil
   useEffect(() => {
     axios.get(urlBcre)
     .then(response => {
-      console.log("iki BCRE",response.data.pool.price)
       setDataBcre(response.data.pool.price)
       if(onDataBcre){
         onDataBcre(response.data.pool.price)
@@ -25,7 +24,6 @@ function PriceCheckCrescent({onDataBcre,onDataGrav,onDataUsd,onHasilBcre,onHasil
     })
     axios.get(urlGrav)
     .then(response => {
-      console.log("iki GRAV",response.data.pool.price)
       if(onDataGrav){
         onDataGrav(response.data.pool.price)
       }
@@ -36,7 +34,6 @@ function PriceCheckCrescent({onDataBcre,onDataGrav,onDataUsd,onHasilBcre,onHasil
     })
     axios.get(urlUsd)
     .then(response => {
-      console.log("iki USDC",response.data.pool.price)
       if(onDataUsd){
         onDataUsd(response.data.pool.price)
       }
