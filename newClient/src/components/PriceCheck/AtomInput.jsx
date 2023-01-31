@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import IrisCheck from './PriceCheckIris';
+
 
 function AtomInput() {
   const [AtomAmount, setAtomAmount] = useState(0);
@@ -14,15 +14,9 @@ function AtomInput() {
             </div>
           </div>
           <div className="flex-1 text-right md:text-center">
-          <IrisCheck AtomAmount={AtomAmount}/>
+          
             <h2 className="font-bold uppercase text-gray-600">ATOM</h2>
-
-            <input
-              placeholder="Atom Amount"
-              onChange={(e) => setAtomAmount(e.target.value)}
-            />
           </div>
-          {AtomAmount}
         </div>
       </div>
     </div>

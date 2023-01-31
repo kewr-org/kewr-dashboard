@@ -15,7 +15,7 @@ function PriceCheckOsmo() {
             <h2 className="font-bold uppercase text-gray-600">Osmosis Zone</h2>
 
             <p className="font-bold text-3xl">
-              $3249{" "}
+              
               <span className="text-green-500">
                 <i className="fas fa-caret-up"></i>
               </span>

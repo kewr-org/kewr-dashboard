@@ -12,7 +12,7 @@ function App() {
         <Header />
       </header>
       <main>
-        <div class="flex flex-col md:flex-row">
+        <div className="flex flex-col md:flex-row">
           <nav aria-label="alternative nav" className="bg-gray-800">
             <NewSideBarMenu />
           </nav>
@@ -21,7 +21,6 @@ function App() {
           </section>
         </div>
       </main>
-
       <Footer />
     </Router>
   );
