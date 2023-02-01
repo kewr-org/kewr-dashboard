@@ -2,6 +2,7 @@ import React, { useState,useEffect } from "react";
 import BalanceCrescent from "./Balances/BalanceCrescent";
 import BalanceDummy from "./Balances/BalanceDummy";
 import BalanceOsmosis from "./Balances/BalanceOsmosis";
+import PriceCheckCanto from "./PriceCheck/PriceCheckCanto";
 import PriceCheckCrescent from "./PriceCheck/PriceCheckCrescent";
 import PriceCheckIris from "./PriceCheck/PriceCheckIris";
 import PriceCheckOsmo from "./PriceCheck/PriceCheckOsmo";
@@ -26,6 +27,32 @@ function PriceCheck() {
   const [hasilOsmo, setHasilOsmo] = useState()
   const [hasilZoneGrav, setHasilZoneGrav] = useState()
   const [hasilZoneIris, setHasilZoneIris] = useState()
+  //  akhir osmo
+
+  // iris
+  const [dataLpt3Standard, setDataLpt3Standard] = useState()
+  const [dataLpt3Token, setDataLpt3Token] = useState()
+  const [hasilLpt3, setHasilLpt3] = useState()
+  const [dataLpt6Standard, setDataLpt6Standard] = useState()
+  const [dataLpt6Token, setDataLpt6Token] = useState()
+  const [hasilLpt6, setHasilLpt6] = useState()
+  const [dataLpt4Standard, setDataLpt4Standard] = useState()
+  const [dataLpt4Token, setDataLpt4Token] = useState()
+  const [hasilLpt4, setHasilLpt4] = useState()
+  // akhir iris
+
+  // canto
+  const [dataCantoWeth, setDataCantoWeth] = useState()
+  const [hasilCantoWeth, setHasilCantoWeth] = useState()
+  const [dataCantoUsdc, setDataCantoUsdc] = useState()
+  const [hasilCantoUsdc, setHasilCantoUsdc] = useState()
+  const [dataCantoUsdt, setDataCantoUsdt] = useState()
+  const [hasilCantoUsdt, setHasilCantoUsdt] = useState()
+  const [dataCanto, setDataCanto] = useState()
+  const [hasilCanto, setHasilCanto] = useState()
+  
+  // akhir canto
+
 
   // crescent
   const handleDataBcre = value => {
@@ -55,6 +82,55 @@ function PriceCheck() {
     setDataZoneIris(value)
   }
 
+  // akhir osmo
+
+  // iris
+  const handleDataLpt3Standard = value => {
+    setDataLpt3Standard(value)
+  }
+
+  const handleDataLpt3Token = value => {
+    setDataLpt3Token(value)
+  }
+
+  const handleDataLpt6Standard = value => {
+    setDataLpt6Standard(value)
+  }
+
+  const handleDataLpt6Token = value => {
+    setDataLpt6Token(value)
+  }
+
+  const handleDataLpt4Standard = value => {
+    setDataLpt4Standard(value)
+  }
+
+  const handleDataLpt4Token = value => {
+    setDataLpt4Token(value)
+  }
+
+  // akhir iris
+
+  // canto
+
+  const handleDataCantoWeth = value => {
+    setDataCantoWeth(value)
+  }
+
+  const handleDataCantoUsdc = value => {
+    setDataCantoUsdc(value)
+  }
+
+  const handleDataCantoUsdt = value => {
+    setDataCantoUsdt(value)
+  }
+
+  const handleDataCanto = value => {
+    setDataCanto(value)
+  }
+
+  // akhir canto
+
   const addPrice = (event) => {
     event.preventDefault()
     setHasilBcre(dataBcre * isiInput)
@@ -63,6 +139,13 @@ function PriceCheck() {
     setHasilOsmo(isiInput * dataOsmo)
     setHasilZoneGrav(isiInput * dataOsmo / dataZoneGrav)
     setHasilZoneIris(isiInput * dataOsmo / dataZoneIris)
+    setHasilLpt3(isiInput * dataLpt3Standard / dataLpt3Token)
+    setHasilLpt6(isiInput * dataLpt3Standard / dataLpt3Token * dataLpt6Token / dataLpt6Standard)
+    setHasilLpt4(isiInput * dataLpt3Standard / dataLpt3Token * dataLpt4Token / dataLpt4Standard)
+    setHasilCantoWeth(isiInput * dataCantoWeth / 1000000000000)
+    setHasilCantoUsdc(isiInput * dataCantoUsdc / 1000000)
+    setHasilCantoUsdt(isiInput * dataCantoUsdt / 1000000)
+    setHasilCanto(isiInput * dataCanto / 1000000000000)
   }
 
   const handleChange = (event) => {
@@ -73,6 +156,13 @@ function PriceCheck() {
     setHasilOsmo("")
     setHasilZoneGrav("")
     setHasilZoneIris("")
+    setHasilLpt3("")
+    setHasilLpt6("")
+    setHasilLpt4("")
+    setHasilCanto("")
+    setHasilCantoUsdc("")
+    setHasilCantoUsdt("")
+    setHasilCantoWeth("")
   }
 
   return (
@@ -89,10 +179,43 @@ function PriceCheck() {
         </div>
       </div>
       <div className="flex flex-wrap">
-        <PriceCheckOsmo onDataOsmo={handleDataOsmo} onDataZoneGrav={handleDataZoneGrav} onDataZoneIris={handleDataZoneIris} onHasilOsmo={hasilOsmo} onHasilZoneGrav={hasilZoneGrav} onHasilZoneIris={hasilZoneIris}/>
-        <PriceCheckCrescent onDataBcre={handleDataBcre} onDataGrav={handleDataGrav} onDataUsd={handleDataUsd} onHasilBcre={hasilBcre} onHasilGrav={hasilGrav} onHasilUsd={hasilUsd}/>
-        <PriceCheckIris />
-        <BalanceDummy />
+        <PriceCheckOsmo 
+        onDataOsmo={handleDataOsmo} 
+        onDataZoneGrav={handleDataZoneGrav} 
+        onDataZoneIris={handleDataZoneIris} 
+        onHasilOsmo={hasilOsmo} 
+        onHasilZoneGrav={hasilZoneGrav} 
+        onHasilZoneIris={hasilZoneIris}/>
+
+        <PriceCheckCrescent 
+        onDataBcre={handleDataBcre} 
+        onDataGrav={handleDataGrav} 
+        onDataUsd={handleDataUsd} 
+        onHasilBcre={hasilBcre} 
+        onHasilGrav={hasilGrav} 
+        onHasilUsd={hasilUsd}/>
+
+        <PriceCheckIris 
+        onDataLpt3Standard={handleDataLpt3Standard}
+        onDataLpt3Token={handleDataLpt3Token}
+        onHasilLpt3={hasilLpt3}
+        onDataLpt6Standard={handleDataLpt6Standard}
+        onDataLpt6Token={handleDataLpt6Token}
+        onHasilLpt6={hasilLpt6}
+        onDataLpt4Standard={handleDataLpt4Standard}
+        onDataLpt4Token={handleDataLpt4Token}
+        onHasilLpt4={hasilLpt4}
+        />
+        <PriceCheckCanto 
+        onDataCantoWeth={handleDataCantoWeth} 
+        onHasilCantoWeth={hasilCantoWeth}
+        onDataCantoUsdc={handleDataCantoUsdc}
+        onHasilCantoUsdc={hasilCantoUsdc}
+        onDataCantoUsdt={handleDataCantoUsdt}
+        onHasilCantoUsdt={hasilCantoUsdt}
+        onDataCanto={handleDataCanto}
+        onHasilCanto={hasilCanto}
+        />
         <BalanceDummy />
         <BalanceDummy />
         <BalanceDummy />

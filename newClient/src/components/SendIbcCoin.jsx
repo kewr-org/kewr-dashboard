@@ -78,20 +78,20 @@ function SendIbcCoin() {
 
     return (
 <form onSubmit={handleSubmit} class="bg-white p-6 rounded-lg">
-            <div class="mb-4">
-                <label class="block text-gray-700 font-medium mb-2">Recipient:</label>
-                <input class="border border-gray-400 p-2 w-full" type="text" value={recipient} onChange={e => setRecipient(e.target.value)} required/>
+            <div className="mb-4">
+                <label className="block text-gray-700 font-medium mb-2">Recipient:</label>
+                <input className="border border-gray-400 p-2 w-full" type="text" value={recipient} onChange={e => setRecipient(e.target.value)} required/>
             </div>
-            <div class="mb-4">
-                <label class="block text-gray-700 font-medium mb-2">Amount:</label>
-                <input class="border border-gray-400 p-2 w-full" type="text" value={amount} onChange={e => setAmount(e.target.value)} required/>
+            <div className="mb-4">
+                <label className="block text-gray-700 font-medium mb-2">Amount:</label>
+                <input className="border border-gray-400 p-2 w-full" type="text" value={amount} onChange={e => setAmount(e.target.value)} required/>
             </div>
-            <div class="mb-4">
-                <label class="block text-gray-700 font-medium mb-2">Memo:</label>
-                <input class="border border-gray-400 p-2 w-full" type="text" value={memo} onChange={e => setMemo(e.target.value)} />
+            <div className="mb-4">
+                <label className="block text-gray-700 font-medium mb-2">Memo:</label>
+                <input className="border border-gray-400 p-2 w-full" type="text" value={memo} onChange={e => setMemo(e.target.value)} />
             </div>
-            <div class="text-center">
-                <input class="bg-indigo-500 text-white p-2 rounded-lg hover:bg-indigo-600" type="submit" value="Send IBC" />
+            <div className="text-center">
+                <input className="bg-indigo-500 text-white p-2 rounded-lg hover:bg-indigo-600" type="submit" value="Send IBC" />
             </div>
         </form>
     )

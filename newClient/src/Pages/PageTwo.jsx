@@ -4,12 +4,11 @@ import SendIbcCoin from "../components/SendIbcCoin";
 
 
 function PageTwo() {
-  return (<>
-
-<SendCoin />
-<SendIbcCoin />
-
-</>
+  return (
+  <div>
+      <SendCoin />
+      <SendIbcCoin />
+</div>
   );
 }
 

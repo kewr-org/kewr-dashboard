@@ -49,13 +49,13 @@ function PriceCheckCrescent({onDataBcre,onDataGrav,onDataUsd,onHasilBcre,onHasil
       <div className="flex-1 text-right md:text-center">
         <h1 className="font-bold uppercase text-yellow-400 mb-3">- Crescent -</h1>
         <p className="font-bold text-1xl text-yellow-400">
-          BCRE : {onHasilBcre}
+          BCRE : {onHasilBcre ? onHasilBcre : "00000000"}
         </p>
         <p className="font-bold text-1xl text-yellow-400">
-          GRAV : {onHasilGrav}
+          GRAV : {onHasilGrav ? onHasilGrav : "00000000"}
         </p>
         <p className="font-bold text-1xl text-yellow-400">
-          USDC : {onHasilUsd}
+          USDC : {onHasilUsd ? onHasilUsd : "00000000"}
         </p>
       </div>
     </div>

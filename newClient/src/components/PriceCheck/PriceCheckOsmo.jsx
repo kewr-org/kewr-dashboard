@@ -48,15 +48,15 @@ function PriceCheckOsmo({onDataOsmo,onDataZoneGrav,onDataZoneIris,onHasilOsmo,on
       <div className="flex-1 text-right md:text-center">
         <h1 className="font-bold uppercase text-purple-400 mb-3">- Osmosis -</h1>
         <p className="font-bold text-1xl text-purple-400">
-              Osmosis : {onHasilOsmo}
+              OSMO : {onHasilOsmo ? onHasilOsmo : "00000000"}
             </p>
 
             <p className="font-bold text-1xl text-purple-400">
-              Grav : {onHasilZoneGrav}
+              GRAV : {onHasilZoneGrav ? onHasilZoneGrav : "00000000"}
             </p>
 
             <p className="font-bold text-1xl text-purple-400">
-              Iris : {onHasilZoneIris}
+              IRIS : {onHasilZoneIris ? onHasilZoneIris : "00000000"}
             </p>
           </div>
         </div>
