@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import { SigningStargateClient } from "@cosmjs/stargate";
 
 const BalanceCosmos = () => {
-  const [AllBalances, setAllBalances] = useState([])
+  const [AllBalances, setAllBalances] = useState()
   useEffect(() => {
     if (!window.keplr) {
       alert("Please install keplr extension");
@@ -14,13 +14,13 @@ const BalanceCosmos = () => {
         const accounts = await offlineSigner.getAccounts();
         const Address = accounts[0].address;
         const client = await SigningStargateClient.connectWithSigner(
-          "https://rpc.cosmos.dragonstake.io",
+          "https://cosmoshub-rpc.stakely.io",
           offlineSigner
         );
-      // let allBalances;
+      let allBalances;
       await client.getAllBalances(Address)
       .then(data => {
-      // allBalances = data;
+      allBalances = data;
       const dataString = JSON.stringify(data)
       setAllBalances(dataString);
   });
@@ -36,7 +36,7 @@ const BalanceCosmos = () => {
         <div className="flex flex-row items-center">
           <div className="flex-1 text-right md:text-center">
             <h2 className="font-bold text-white">COSMOS HUB</h2>
-            <p className="font-bold text-1xl text-white">{AllBalances}</p>
+            <p className="font-bold text-1xl text-red-600">{AllBalances}</p>
           </div>
         </div>
       </div>
