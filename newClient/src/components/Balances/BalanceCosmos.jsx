@@ -41,7 +41,15 @@ const BalanceCosmos = () => {
             </div>
           </div>
           <div className="flex-1 text-right md:text-center">
-          <div></div>
+          <div>
+          <ul>
+      {AllBalances && AllBalances.map(balance => (
+        <li key={balance.denom}>
+          {balance.denom}: {balance.amount}
+        </li>
+      ))}
+    </ul>
+          </div>
             <h2 className="font-bold text-white">COSMOS SU</h2>
             <p className="font-bold text-3xl text-white">tes123</p>
           </div>
