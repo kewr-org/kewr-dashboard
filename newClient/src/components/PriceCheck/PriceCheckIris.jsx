@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from "react";
 import axios from "axios";
+import LogoIris from '../../assets/irisnet.svg'
 
 function PriceCheckIris({
   onDataLpt3Standard,
@@ -55,7 +56,12 @@ function PriceCheckIris({
     <div className="w-full md:w-1/2 xl:w-1/3 p-6">
        <div className="bg-gray border border-pink-400 rounded-lg shadow-xl p-5">
     <div className="flex flex-row items-center">
-      <div className="flex-1 text-right md:text-center">
+      <div className="flex-shrink pr-4">
+          <div className="rounded-full bg-black">
+              <img src={LogoIris} width="70"/>
+            </div>
+          </div>
+          <div className="flex-1 text-right md:text-center">
         <h1 className="font-bold uppercase text-pink-400 mb-3">- IRIS -</h1>
         <p className="font-bold text-1xl text-pink-400">
               IRIS : {onHasilLpt3 ? onHasilLpt3 : "00000000"}

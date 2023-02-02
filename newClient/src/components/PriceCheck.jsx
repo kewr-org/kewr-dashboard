@@ -138,7 +138,7 @@ function PriceCheck() {
     setHasilUsd(isiInput * dataUsd)
     setHasilOsmo(isiInput * dataOsmo)
     setHasilZoneGrav(isiInput * dataOsmo / dataZoneGrav)
-    setHasilZoneIris(isiInput * dataOsmo / dataZoneIris)
+    setHasilZoneIris(isiInput * dataZoneIris)
     setHasilLpt3(isiInput * dataLpt3Standard / dataLpt3Token)
     setHasilLpt6(isiInput * dataLpt3Standard / dataLpt3Token * dataLpt6Token / dataLpt6Standard)
     setHasilLpt4(isiInput * dataLpt3Standard / dataLpt3Token * dataLpt4Token / dataLpt4Standard)
@@ -216,9 +216,9 @@ function PriceCheck() {
         onDataCanto={handleDataCanto}
         onHasilCanto={hasilCanto}
         />
-        <BalanceDummy />
-        <BalanceDummy />
-        <BalanceDummy />
+        <PriceCheckCrescent />
+        <PriceCheckIris />
+        <PriceCheckOsmo />
       </div>
     </div>
   );
