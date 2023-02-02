@@ -18,8 +18,8 @@ function Balances() {
       </div>
 
       <div className="flex flex-wrap bg-gray-800">
-        <BalanceOsmosis />
-        <BalanceCosmos />
+      <BalanceCosmos />
+      <BalanceOsmosis />
         <BalanceIris />
         <BalanceCrescent />
         <BalanceCosmos />
