@@ -16,7 +16,7 @@ function App() {
           <nav aria-label="alternative nav" className="bg-gray-800">
             <NewSideBarMenu />
           </nav>
-          <section className="bg-gray-800">
+          <section className="inline-block bg-gray-800 w-full">
             <MainRoute />
           </section>
         </div>
