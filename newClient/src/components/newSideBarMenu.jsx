@@ -19,8 +19,13 @@ const links = [
   },
   {
     to: '/page3',
-    icon: '╋ ',
+    icon: '✚ ',
     text: 'Chain Add'
+  },
+  {
+    to: '/page4',
+    icon: '⇌ ',
+    text: 'Swap'
   }
 ]
 
