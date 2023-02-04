@@ -3,6 +3,8 @@ import { SigningStargateClient } from "@cosmjs/stargate";
 
 const BalanceCosmos = () => {
   const [AllBalances, setAllBalances] = useState()
+  
+
   useEffect(() => {
     if (!window.keplr) {
       alert("Please install keplr extension");
@@ -17,12 +19,10 @@ const BalanceCosmos = () => {
           "https://cosmoshub-rpc.stakely.io",
           offlineSigner
         );
-      let allBalances;
       await client.getAllBalances(Address)
       .then(data => {
-      allBalances = data;
-      const dataString = JSON.stringify(data)
-      setAllBalances(dataString);
+      setAllBalances(data);
+      console.log(data);
   });
       
       }
@@ -36,7 +36,13 @@ const BalanceCosmos = () => {
         <div className="flex flex-row items-center">
           <div className="flex-1 text-right md:text-center">
             <h2 className="font-bold text-white">COSMOS HUB</h2>
-            <p className="font-bold text-1xl text-red-600">{AllBalances}</p>
+            <ul>
+      {AllBalances && AllBalances.map(balance => (
+        <li key={balance.denom}>
+          {balance.denom}
+        </li>
+      ))}
+    </ul>
           </div>
         </div>
       </div>

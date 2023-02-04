@@ -5,7 +5,7 @@ import SendIbcCoin from "../components/SendIbcCoin";
 
 function PageTwo() {
   return (
-  <div>
+  <div className="flex flex-row justify-around">
       <SendCoin />
       <SendIbcCoin />
 </div>
