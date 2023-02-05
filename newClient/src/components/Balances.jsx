@@ -1,6 +1,6 @@
 import React from "react";
 import BalanceCrescent from "./Balances/BalanceCrescent";
-import BalanceDummy from "./Balances/BalanceDummy";
+import BalanceBoot from "./Balances/BalanceBostrom";
 import BalanceIris from "./Balances/BalanceIris";
 import BalanceOsmosis from "./Balances/BalanceOsmosis";
 import BalanceCosmos from "./Balances/BalanceCosmos";
@@ -23,7 +23,7 @@ function Balances() {
         <BalanceIris />
         <BalanceCrescent />
         <BalanceCosmos />
-        <BalanceIris />
+        <BalanceBoot />
         <BalanceOsmosis />
         <BalanceCosmos />
         <BalanceCrescent />
