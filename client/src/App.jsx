@@ -4,10 +4,15 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import MainRoute from "./components/MainRoute";
 import NewSideBarMenu from "./components/newSideBarMenu";
+import { WalletContext } from "./utils/keplr";
+import { useState } from "react";
 
 function App() {
+  const [walletId, setWalletId] = useState(null)
+
   return (
     <Router>
+      <WalletContext.Provider value={{walletId, setWalletId}}>
       <header>
         <Header />
       </header>
@@ -22,6 +27,7 @@ function App() {
         </div>
       </main>
       <Footer />
+      </WalletContext.Provider>
     </Router>
   );
 }

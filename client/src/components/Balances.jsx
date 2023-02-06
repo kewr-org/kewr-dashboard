@@ -4,8 +4,13 @@ import BalanceBoot from "./Balances/BalanceBostrom";
 import BalanceIris from "./Balances/BalanceIris";
 import BalanceOsmosis from "./Balances/BalanceOsmosis";
 import BalanceCosmos from "./Balances/BalanceCosmos";
+import { WalletContext } from "../utils/keplr";
+import { useContext } from "react";
 
-function Balances() {
+function Balances(props) {
+
+  const {walletId} = useContext(WalletContext)
+
   return (
     <div
       id="main"
@@ -14,19 +19,23 @@ function Balances() {
       <div className="bg-gray-800 pt-3">
         <div className="rounded-tl-3xl bg-grey border border-cyan-400 p-4 shadow text-2xl text-white">
           <h1 className="font-bold pl-2">Balances</h1>
+          <h1>{walletId}</h1>
         </div>
       </div>
-
       <div className="flex flex-wrap bg-gray-800">
-      <BalanceCosmos />
-      <BalanceOsmosis />
-        <BalanceIris />
-        <BalanceCrescent />
-        <BalanceCosmos />
-        <BalanceBoot />
-        <BalanceOsmosis />
-        <BalanceCosmos />
-        <BalanceCrescent />
+       { walletId && (
+        <>
+          <BalanceCosmos />
+          <BalanceOsmosis />
+          <BalanceIris />
+          <BalanceCrescent />
+          <BalanceCosmos />
+          <BalanceBoot />
+          <BalanceOsmosis />
+          <BalanceCosmos />
+          <BalanceCrescent />
+        </>
+       )}
       </div>
     </div>
   );

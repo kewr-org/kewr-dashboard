@@ -40,6 +40,7 @@ function PriceCheckOsmo({onDataOsmo,onDataZoneGrav,onDataZoneIris,onHasilOsmo,on
         .catch(error => {
             console.log(error)
         })
+    axios.get()
   })
 
   return (

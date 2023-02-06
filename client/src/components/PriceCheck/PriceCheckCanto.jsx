@@ -1,5 +1,6 @@
 import React,{useState, useEffect} from 'react'
-import axios from 'axios'
+import axios from 'axios';
+import LogoCanto from "../../assets/canto.png"
 
 function PriceCheckCanto({
     onDataCantoWeth,
@@ -132,6 +133,11 @@ function PriceCheckCanto({
     <div className="w-full md:w-1/2 xl:w-1/3 p-6">
        <div className="bg-gray border border-green-400 rounded-lg shadow-xl p-5">
     <div className="flex flex-row items-center">
+    <div className="flex-shrink pr-4">
+          <div className="rounded-full bg-black">
+              <img src={LogoCanto} width="70"/>
+            </div>
+            </div>
       <div className="flex-1 text-right md:text-center">
         <h1 className="font-bold uppercase text-green-400 mb-3">- CANTO -</h1>
         <p className="font-bold text-1xl text-green-400">

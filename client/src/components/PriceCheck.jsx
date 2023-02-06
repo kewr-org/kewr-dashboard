@@ -1,13 +1,13 @@
-import React, { useState,useEffect } from "react";
-import BalanceCrescent from "./Balances/BalanceCrescent";
-import BalanceDummy from "./Balances/BalanceDummy";
-import BalanceOsmosis from "./Balances/BalanceOsmosis";
+import React, { useState,useEffect,useContext } from "react";
 import PriceCheckCanto from "./PriceCheck/PriceCheckCanto";
 import PriceCheckCrescent from "./PriceCheck/PriceCheckCrescent";
 import PriceCheckIris from "./PriceCheck/PriceCheckIris";
 import PriceCheckOsmo from "./PriceCheck/PriceCheckOsmo";
+import { WalletContext } from "../utils/keplr";
 
 function PriceCheck() {
+
+  const {walletId} = useContext(WalletContext)
 
   const [isiInput, setIsiInput] = useState()
   
@@ -179,7 +179,9 @@ function PriceCheck() {
         </div>
       </div>
       <div className="flex flex-wrap">
-        <PriceCheckOsmo 
+        {walletId && (
+          <>
+          <PriceCheckOsmo 
         onDataOsmo={handleDataOsmo} 
         onDataZoneGrav={handleDataZoneGrav} 
         onDataZoneIris={handleDataZoneIris} 
@@ -219,6 +221,9 @@ function PriceCheck() {
         <PriceCheckCrescent />
         <PriceCheckIris />
         <PriceCheckOsmo />
+        </>
+        )}
+        
       </div>
     </div>
   );
