@@ -42,6 +42,10 @@ function BalanceOsmosis() {
       {
         "denom" : "ibc/CBA34207E969623D95D057D9B11B0C8B32B89A71F170577D982FDDE623813FFC",
         "alias" : "MNTL"
+      },
+      {
+        "denom" : "ibc/65381C5F3FD21442283D56925E62EA524DED8B6927F0FF94E21E0020954C40B5",
+        "alias" : "WETHgrav"
       }
   ];
 

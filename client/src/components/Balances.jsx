@@ -19,7 +19,7 @@ function Balances(props) {
       <div className="bg-gray-800 pt-3">
         <div className="rounded-tl-3xl bg-grey border border-cyan-400 p-4 shadow text-2xl text-white">
           <h1 className="font-bold pl-2">Balances</h1>
-          <h1>{walletId}</h1>
+          
         </div>
       </div>
       <div className="flex flex-wrap bg-gray-800">
