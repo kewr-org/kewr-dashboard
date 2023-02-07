@@ -52,7 +52,12 @@ function AddCanto() {
         "coinDecimals": 18,
         "coinGeckoId": "unknown"
       },
-      "features": []
+      "features": [
+        "ibc-transfer",
+		    "ibc-go",
+		    "eth-address-gen",
+		    "eth-key-sign",
+      ]
     });
   }
 
