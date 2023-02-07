@@ -2,6 +2,7 @@ import React from 'react'
 
 function AddEchelon() {
   const handleClick = () => {
+    console.log("button add Echelon")
     window.keplr.experimentalSuggestChain({
       "chainId": "echelon_3000-3",
       "chainName": "echelon",
@@ -61,7 +62,7 @@ function AddEchelon() {
   };
   
   return (
-    <button className="bg-teal-200 hover:bg-teal-400 text-gray-800 font-semibold py-2 px-4 border  rounded shadow" onSubmit={handleClick}>✚ | Echelon </button>
+    <button className="bg-teal-200 hover:bg-teal-400 text-gray-800 font-semibold py-2 px-4 border  rounded shadow" onClick={handleClick}>✚ | Echelon </button>
   )
 }
 

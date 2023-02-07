@@ -4,6 +4,7 @@ import BalanceBoot from "./Balances/BalanceBostrom";
 import BalanceIris from "./Balances/BalanceIris";
 import BalanceOsmosis from "./Balances/BalanceOsmosis";
 import BalanceCosmos from "./Balances/BalanceCosmos";
+import BalanceCanto from "./Balances/BalanceCanto";
 import { WalletContext } from "../utils/keplr";
 import { useContext } from "react";
 
@@ -29,11 +30,9 @@ function Balances(props) {
           <BalanceOsmosis />
           <BalanceIris />
           <BalanceCrescent />
-          <BalanceCosmos />
+          <BalanceCanto />
           <BalanceBoot />
-          <BalanceOsmosis />
-          <BalanceCosmos />
-          <BalanceCrescent />
+          
         </>
        )}
       </div>

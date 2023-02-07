@@ -2,6 +2,7 @@ import React from 'react'
 
 function AddCanto() {
   const handleClick = () => {
+    console.log("button add Canto")
     window.keplr.experimentalSuggestChain({
       "chainId": "canto_7700-1",
       "chainName": "canto",
@@ -57,7 +58,7 @@ function AddCanto() {
 
   return (
 
-    <button className="bg-teal-200 hover:bg-teal-400 text-gray-800 font-semibold py-2 px-4 border  rounded shadow" onSubmit={handleClick}>✚ | Canto </button>
+    <button className="bg-teal-200 hover:bg-teal-400 text-gray-800 font-semibold py-2 px-4 border  rounded shadow" onClick={handleClick}>✚ | Canto </button>
 
   )
 }

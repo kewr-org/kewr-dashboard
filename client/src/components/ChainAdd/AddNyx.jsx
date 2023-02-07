@@ -8,9 +8,9 @@ function AddNyx() {
       "rpc": "https://rpc.nyx.nodes.guru",
       "rest": "https://api.nyx.nodes.guru",
       "bip44": {
-        "coinType": 118
+        "coinType": 60
       },
-      "coinType": 118,
+      "coinType": 60,
       "bech32Config": {
         "bech32PrefixAccAddr": "n",
         "bech32PrefixAccPub": "npub",
@@ -57,7 +57,7 @@ function AddNyx() {
 
   
   return (
-    <button className="bg-teal-200 hover:bg-teal-400 text-gray-800 font-semibold py-2 px-4 border  rounded shadow" onSubmit={handleClick}>✚ | Nyx</button>
+    <button className="bg-teal-200 hover:bg-teal-400 text-gray-800 font-semibold py-2 px-4 border  rounded shadow" onClick={handleClick}>✚ | Nyx</button>
   )
 }
 

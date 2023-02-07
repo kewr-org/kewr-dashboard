@@ -8,9 +8,9 @@ function AddAgoricDevnet() {
       "rpc": "http://139.59.8.130:26657",
       "rest": "https://devnet.api.agoric.net",
       "bip44": {
-        "coinType": null
+        "coinType": 60
       },
-      "coinType": null,
+      "coinType": 60,
       "bech32Config": {
         "bech32PrefixAccAddr": "agoric",
         "bech32PrefixAccPub": "agoricpub",
