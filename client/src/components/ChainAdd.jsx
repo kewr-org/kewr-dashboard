@@ -1,10 +1,10 @@
 import React from 'react'
-import AddAcreChain from './ChainAdd/AddAcreChain'
+import AddAgoricDevnet from './ChainAdd/AddAgoricDevnet'
 import AddCanto from './ChainAdd/AddCanto'
-import AddCosmoshubTestnet from './ChainAdd/AddCosmoshubTestnet'
+import AddPlanq from './ChainAdd/AddPlanq'
 import AddEchelon from './ChainAdd/AddEchelon'
-import AddGnoland from './ChainAdd/AddGnoland'
-import AddTerraClassic from './ChainAdd/AddTerraClassic'
+import AddGnoland from './ChainAdd/AddNyx'
+import AddPointNetwork from './ChainAdd/AddPointNetwork'
 
 function ChainAdd() {
   return (
@@ -15,11 +15,11 @@ function ChainAdd() {
   <AddEchelon />
   </div>
   <div className="flex flex-col justify-around justify-items-center">
-  <AddTerraClassic />
- <AddAcreChain />
+  <AddPointNetwork />
+  <AddAgoricDevnet />
   </div>
   <div className="flex flex-col justify-around justify-items-center">
-  <AddCosmoshubTestnet />
+  <AddPlanq />
   <AddGnoland />
   </div>
   </div>
