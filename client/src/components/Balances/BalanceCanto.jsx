@@ -1,5 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import LogoCanto from "../../assets/canto.png"
+import { SigningStargateClient } from "@cosmjs/stargate";
+import {checkIbcListReturnAlias} from '../../utils'
 
 function BalanceCanto() {
 
@@ -10,12 +12,12 @@ function BalanceCanto() {
       "alias" : "OSMOSIS (OSMO/Channel-141)"
     },
     {
-      "denom" : "ibc/E55D3D529D45DB5A1955ACE20F6B36BDB8D35BD0BB1FA8FB93AEB8AC17E21561",
-      "alias" : "ATOM (BOSTROM/Channel-341)"
+      "denom" : "ibc/9117A26BA81E29FA4F78F57DC2BD90CD3D26848101BA880445F119B22A1E254E",
+      "alias" : "ATOM (Cosmos Hub/Channel-2)"
     },
     {
-      "denom" : "uatom",
-      "alias" : "ATOM"
+      "denom" : "acanto",
+      "alias" : "CANTO"
     }
   ];
 
@@ -30,7 +32,7 @@ function BalanceCanto() {
         const accounts = await offlineSigner.getAccounts();
         const Address = accounts[0].address;
         const client = await SigningStargateClient.connectWithSigner(
-          " https://rpc.cosmos.directory/canto",
+          "https://rpc.canto.nodestake.top",
           offlineSigner
         );
       await client.getAllBalances(Address)
