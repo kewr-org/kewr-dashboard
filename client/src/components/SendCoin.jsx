@@ -2,6 +2,17 @@ import React, { useState } from 'react';
 import { SigningStargateClient, assertIsBroadcastTxSuccess } from '@cosmjs/stargate';
 
 function SendCoin() {
+    const chainData= {
+        chainId: "osmosis-1",
+        chainName: "Osmosis mainnet",
+        rpc: "https://rpc-osmosis.blockapsis.com",
+        rest: "https://lcd-osmosis.blockapsis.com",
+        stakeCurrency: {
+          coinDenom: "OSMO",
+          coinMinimalDenom: "uosmo",
+          coinDecimals: 6,
+        },
+      };
     // state to hold the form values
     const [recipient, setRecipient] = useState("");
     const [amount, setAmount] = useState("");
@@ -72,7 +83,7 @@ function SendCoin() {
 
     return (
         <div>
-        <div className='flex flex-col'>Trnasfer Coin</div>
+        <div className='flex flex-col m-5 bg-indigo-500 text-white text-center'>Transfer Coin</div>
             <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg">
             <div className="mb-4">
                 <label className="block text-gray-700 font-medium mb-2">Recipient:</label>

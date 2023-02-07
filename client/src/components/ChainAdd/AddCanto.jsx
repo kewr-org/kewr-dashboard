@@ -54,9 +54,9 @@ function AddCanto() {
       },
       "features": [
         "ibc-transfer",
-        "ibc-go",
-        "eth-address-gen",
-        "eth-key-sign"
+		    "ibc-go",
+		    "eth-address-gen",
+		    "eth-key-sign",
       ]
     });
   }
