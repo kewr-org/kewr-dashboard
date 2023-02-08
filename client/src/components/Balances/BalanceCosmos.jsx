@@ -47,7 +47,7 @@ const BalanceCosmos = () => {
     }
   }, []);
   return (
-    <div className="w-full md:w-1/2 xl:w-1/3 p-6">
+    <div className="w-full md:w-1/1 xl:w-1/1 p-6">
       <div className="bg-grey border border-cyan-300 border-b-4 rounded-lg shadow-xl p-5">
         <div className="flex flex-row items-center">
           <div className="flex-1 text-right md:text-center">
