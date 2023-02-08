@@ -62,7 +62,7 @@ function AddEchelon() {
   };
   
   return (
-    <button className="bg-teal-200 hover:bg-teal-400 text-gray-800 font-semibold py-2 px-4 border  rounded shadow" onClick={handleClick}>✚ | Echelon </button>
+    <button className="bg-gray-800 hover:bg-teal-400 text-white font-semibold py-2 px-4 border  rounded shadow" onClick={handleClick}>✚ | Echelon </button>
   )
 }
 

@@ -1,6 +1,8 @@
 import React from 'react'
+import LogoCanto from '../../assets/canto.png'
 
 function AddCanto() {
+
   const handleClick = () => {
     console.log("button add Canto")
     window.keplr.experimentalSuggestChain({
@@ -63,7 +65,8 @@ function AddCanto() {
 
   return (
 
-    <button className="bg-teal-200 hover:bg-teal-400 text-gray-800 font-semibold py-2 px-4 border  rounded shadow" onClick={handleClick}>✚ | Canto </button>
+    <button className="bg-gray-800 hover:bg-cyan-400 text-cyan-400 hover:text-white font-semibold py-2 px-4 border rounded shadow"
+    onClick={handleClick}>✚ | Canto </button>
 
   )
 }

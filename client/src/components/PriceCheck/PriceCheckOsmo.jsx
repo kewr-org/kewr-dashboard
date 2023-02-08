@@ -6,7 +6,7 @@ import LogoOsmo from "../../assets/osmosis.svg"
 function PriceCheckOsmo({onDataOsmo,onDataZoneGrav,onDataZoneIris,onHasilOsmo,onHasilZoneGrav,onHasilZoneIris}) {
 
     const urlOsmo = "https://osmosis-api.polkachu.com/osmosis/gamm/v1beta1/pools/1/prices?base_asset_denom=uosmo&quote_asset_denom=ibc%2F27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2"
-    const urlOsmoGrav = "https://api.osl.zone/osmosis/gamm/v1beta1/pools/625/prices?base_asset_denom=uosmo&quote_asset_denom=ibc%2FE97634A40119F1898989C2A23224ED83FDD0A57EA46B3A094E287288D1672B44"
+    const urlOsmoGrav = "https://osmosis-api.polkachu.com/osmosis/gamm/v1beta1/pools/625/prices?base_asset_denom=uosmo&quote_asset_denom=ibc%2FE97634A40119F1898989C2A23224ED83FDD0A57EA46B3A094E287288D1672B44"
     const urlOsmoIris = "https://osmosis-api.polkachu.com/osmosis/gamm/v1beta1/pools/8/prices?base_asset_denom=ibc%2F7C4D60AA95E5A7558B0A364860979CA34B7FF8AAF255B87AF9E879374470CEC0&quote_asset_denom=ibc%2F27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2"
 
   useEffect(() => {

@@ -9,6 +9,9 @@ import AddPointNetwork from './ChainAdd/AddPointNetwork'
 function ChainAdd() {
   return (
     <>
+    <div className='border border-white p-3 mt-4'>
+    <h1 className=' text-cyan-400 text-3xl font-bold'>Chain Add</h1>
+    </div>
     <div className="flex flex-row h-64 justify-around">
   <div className="flex flex-col justify-around justify-items-center">
   <AddCanto />
