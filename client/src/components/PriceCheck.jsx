@@ -179,7 +179,7 @@ function PriceCheck() {
         </div>
       </div>
       <div className="flex flex-wrap">
-        {walletId && (
+        {walletId ? (
           <>
           <PriceCheckOsmo 
         onDataOsmo={handleDataOsmo} 
@@ -222,6 +222,8 @@ function PriceCheck() {
         <PriceCheckIris />
         <PriceCheckOsmo />
         </>
+        ) : (
+          <h1 className="text-white  mx-auto text-6xl mt-4">Please Connect Wallet</h1>
         )}
         
       </div>

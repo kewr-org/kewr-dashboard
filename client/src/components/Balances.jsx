@@ -25,7 +25,7 @@ function Balances(props) {
         </div>
       </div>
       <div className="flex flex-wrap bg-gray-800">
-       { walletId && (
+       { walletId ?  (
         <>
           <BalanceCosmos />
           <BalanceOsmosis />
@@ -35,6 +35,8 @@ function Balances(props) {
           <BalanceBoot />
           <BalanceEvmos />
         </>
+       ) : (
+        <h1 className="mx-auto mt-4 text-white text-bold text-6xl">Please Connect Wallet</h1>
        )}
       </div>
     </div>
